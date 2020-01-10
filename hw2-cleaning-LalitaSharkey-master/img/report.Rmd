@@ -1,0 +1,171 @@
+---
+title: "Homework 2"
+author: "Lalita Sharkey"
+date: "9/3/2019"
+output: rmarkdown::github_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+CS 625, Fall 2019
+
+Overview of data before cleaning
+---
+This dataset contains information about pet names. The overall observation of the dataset beforoe cleaening is below.  
+1. Number of attributes: 5  
+  1.1 What kind of pet  
+    * Text type attribute  
+    * There are 83 different choices  
+  1.2 Pet's full name  
+    * Text type attribute  
+    * There are 1523 different full names  
+    * Some of them are assumed to be the same name but there are some special characters added  
+  1.3 Pet's everyday name  
+    * Text type attribute  
+    * 1367 different everyday names  
+    * Some names have special characters  
+  1.4 Pet's age  
+    * Text type attribute 
+    * 220 differents values
+    * Many numeric values with missing units 
+    * Some of them are deceaded 
+    * Some of values have special characters
+  1.5 Pet's breed 
+    * Text type attribute 
+    * 827 different values of pet's breed 
+    * Multiple duplicate values with special characters added  
+1. Number items:
+   * Number of rows: 1784  
+   * Number of records: 1783  
+   * One record with multiple values at Row number 1584 which contains 4 different records   
+   * One blank row at row number 333  
+
+Data cleaning
+---
+1. Removing an empty row 
+   * One empty row at row number 333 
+   * Used "Facet by blank" option from the "All" column 
+   * Selected "Edit row" then "Remove all matching rows"  
+   * Total row number after removing empty row is 1783 
+2. Rename columns 
+   * Column names were very long and it could be harder when working with GREL
+   * Truncated column names as below by using "Rename this column" under "Edit column" option: 
+       2.1 "What kind of pet is this (Dog, Cat, Bird, Other)" => "Type" 
+       2.2 "Pet's Full Name (you =on't have to include your last name. Think "Winston Churchill" and not   "Winston Churchill MYLASTNAME") => "Full Name" 
+       2.3 "Pet's everyday name (e.g. "Church")" => "Nickname"  
+       2.4 "Pet's age" => "Age" 
+       2.5 "Pet's breed (if applicable)" => "Breed" 
+3. Splitting the multi-valued cell   
+      3.1 Using custom text facet on "Breed" column and put GREL as `value.contains("Unknown unknown Bali dog mix and tabby cat")`  
+      3.2 Manually replaced "," with "+++" in "Full Name", and "Nickname" columns 
+      3.3 Manually inserted "+++" between each value in "Age" column 
+      1. Split "Type" column using "+++" as separator  
+      1. Moved "Breed" column to be the first column 
+      1. Split "Full Name" and "Nickname" columns using "+++" as separator 
+      1. Split "Age" column using "+++" as separator 
+      1. Manually added "+++" between each breed name in "Breed" column 
+      1. Split "Breed" column using "+++" as separator 
+      1. Moved "Breed" column back to be the last column 
+1. Cleaning "Type" attribute   
+   1. Used "Common transforms" + "To title case" to change  
+   1. Used "Common transforms" + "Trim leading and trailing white space" 
+   1. Merge all Fish values (Total 23 rows) 
+        * Listed rows that contain "fish" or "Fish" using custom text facet `or(value.contains("Fish"),value.contains("fish"))` 
+        * Used "Cluster and edit" to merge 
+   1. Merge other types using "Cluster and edit" 
+            1. Dog 1131 rows:  
+                * Dog (1117 rows)  
+                * Sog (3 rows) - Assumed typo  
+                * Dig (1 row) - Assumed typo  
+                * God ( 1 row) - Assumed typo  
+                * Dog with special characters (2 rows)  
+                * Puppy (1 row) - Synonym of dog  
+                * Pit Bull (1 row) - A kind of dog  
+                * Doggo (1 row) - Synonym of dog  
+                * Phoebe (1 row) - Checked "Breed" attribute and it was "Staffordshire Terrier"  
+                * Luna (1 row) -  Checked "Breed" attribute and it was "Lab"  
+                * Dlg (1 row) - Assumed typo  
+                * Mona (1 row) - Check "Breed" attribute and it was "Bluetick beagle" 
+            2. Cat 500 rows: 
+                * Cat (492 rows) 
+                * Cats (2 rows) 
+                * ca (1 row) - Assumed typo 
+                * Cat with special characters (1 row) 
+                * Katze (1 row) - German for cat  
+                * Kitty Meow (1 row) - Synonym of cat  
+                * Car (1 row) - Assumed Typo 
+                * Kitten (1 row) - Synonym of cat 
+            3. Rodent 31 rows: 
+                * Guinea Pig (8 rows) - A kind of rodent 
+                * Prairie Dog (1 row) - A kind of rodent 
+                * Chinchilla (3 rows) - A kind of rodent 
+                * Hamster (14 rows) - A kind of rodent 
+                * Gerbil (2 rows) - A kind of rodent 
+            4. Rabbit 16 rows: 
+                * Rabbit (12 rows) 
+                * Bunny (4 rows) - Synonym of rabbit 
+            5. Bird 13 rows: 
+                * Bird (12 rows) 
+                * Chicken (1 row) 
+            6. Horse 22 rows: 
+                * Horse (22 rows) 
+            7. Reptile 14 rows: 
+                * Snake (3 rows) 
+                * Leopard Gecko (1 row) 
+                * Gecko (3 rows) 
+                * Tortoise (2 rows) 
+                * Lizard (3 rows) 
+                * Turtle (3 rows) 
+            8. Other 30 rows:  
+                * Bees (1 row) 
+                * Hedgehog (2 rows)
+                * Ferret (1 row) 
+                * Hermit Crab (2 rows) 
+                * Frog (1 row)  
+                * Spider (1 row) 
+                * Spiney Leaf Insect (1 row) 
+                * Cow (1 row) 
+            9. Not pet 6 rows: 
+                * Roomba (1 row) 
+                * Robot (1 row) 
+                * Elephant (1 row) 
+                * Virus (1 row) 
+                * Card Board Poster (1 row) 
+   1. Removing "Not pet" rows 
+      * Total of 6 rows 
+      * Removed using "Remove all matching" row after selected "Not pet" from text facet 
+      * Total number of rows: 1780 rows 
+      * Total 9 different types 
+1. Cleaning "Full Name" attribute
+   * Used common transform to change text values to title case and trim leading and trailing white space
+   * Using text fcet to find (blank) and editted blank values to "N/A"
+   * Removed the additional parentheses and texts inside in 12 cells by using GREL`value.replace( (/\(.*?\)/), "")` because texts in parentheses are only the additional explanations of "Full Name"  
+   * Manually editted row number 1360 to "Mao" instead of "Mao. (as In Chairman Mao,  Not Miaow Or Mayo."
+   * Transformed cells to remove non-ASCII characters using GREL `value.replace(/[^\x20-\x7e]/, "")`  
+   * Manually editted value "Mao. (as In Chairman Mao,  Not Miaow Or Mayo." to "Mao"
+   * Romoved all commas to avoid the confusion of the long full names with multiple names by using `value.replace(",","")`  
+   * Inspected 4 items with contains "And" or "&" 
+     * Used custom text facet with GREL `or(value.contains("&"), value.contains("And "))`
+     * Record number 16 "Benny And The Jets" and record number 1378 are considered to be one dog because it has one value for nickname and age
+     * Record number 39 "Iggy And Ziggy" considered as 2 rabbits because the "Nickname" column contained "Igs and Zigs" and "Breed" column contained "Lop and angora" 
+          * Manually changed "And" and "and" in ""columns to "+++"
+          * Splited "Full Name", "Nickname", and "Breed" columns using "+++" as seperator
+          * Filled down "Type" column
+     *Record number 1683 "Watson & Crick" is considered to be 2 different cats because "Nickname" contained "Dr. Watson & Dr. Crick" and "Breed" column contained "a tabby and a grey cat" 
+          * Followed the previous steps (Record number 39) of splitting the multi-valued cell   
+1. Cleaning "Nickname" attribute  
+    * Used common transform to change text values to title case and trim leading and trailing white space
+    * Using text fcet to find (blank) and editted blank values to "N/A"  
+    * Removed the additional parentheses and texts inside in 13 cells by using GREL`value.replace( (/\(.*?\)/), "")` because texts in parentheses are only the additional explanations of "Nickname"
+    * Transformed 8 cells to remove non-ASCII characters by using GREL `value.replace(/[^\x20-\x7e]/, "")` 
+    * Only 
+    
+References
+---
+(n.d.). LibGuides: OpenRefine: Splitting Cell Values. Retrieved from  https://guides.library.illinois.edu/openrefine/splitting
+
+OpenRefine. (n.d.). OpenRefine/OpenRefine. Retrieved from  https://github.com/OpenRefine/OpenRefine/wiki/Row-Editing
+
+AnaRitaAnaRita 6711 silver badge99 bronze badges, & hpiedcoqhpiedcoq 7855 bronze badges. (1966, February 1). Split multi valued cells in more than one column into rows (Open Refine). Retrieved from https://stackoverflow.com/questions/32831582/split-multi-valued-cells-in-more-than-one-column-into-rows-open-refine
