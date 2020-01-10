@@ -1,0 +1,2504 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20194.19.1010.1202                               -->
+<workbook source-build='2019.4.0 (20194.19.1010.1202)' source-platform='win' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <AutoCreateAndUpdateDSDPhoneLayouts ignorable='true' predowngraded='true' />
+    <IntuitiveSorting />
+    <IntuitiveSorting_SP2 />
+    <MapboxVectorStylesAndLayers />
+    <SheetIdentifierTracking ignorable='true' predowngraded='true' />
+    <WindowsPersistSimpleIdentifiers />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource caption='Input_Data' inline='true' name='federated.02p8d8a0natvcf1cx7h7r1fyppc2' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='traffic_crashes' name='textscan.1adn5ik1wstn8c17law120bfewbg'>
+            <connection class='textscan' directory='C:/Users/Lalita/Documents/School/CS625/hw8-refine-LalitaSharkey/data' filename='traffic_crashes.csv' password='' server='' />
+          </named-connection>
+          <named-connection caption='filelocation' name='textscan.17sqktl1docb9s17689361bkob01'>
+            <connection class='textscan' directory='C:/Users/Lalita/Documents/School/CS625/hw8-refine-LalitaSharkey/data' filename='filelocation.csv' password='' server='' />
+          </named-connection>
+        </named-connections>
+        <relation join='inner' type='join'>
+          <clause type='join'>
+            <expression op='='>
+              <expression op='[filelocation.csv].[issue_date]' />
+              <expression op='[traffic_crashes.csv].[CRASH_DATE]' />
+            </expression>
+          </clause>
+          <relation connection='textscan.17sqktl1docb9s17689361bkob01' name='filelocation.csv' table='[filelocation#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+              <column datatype='integer' name='ticket_number' ordinal='0' />
+              <column datatype='datetime' name='issue_date' ordinal='1' />
+              <column datatype='string' name='violation_location' ordinal='2' />
+              <column datatype='string' name='license_plate_number' ordinal='3' />
+              <column datatype='string' name='license_plate_state' ordinal='4' />
+              <column datatype='string' name='license_plate_type' ordinal='5' />
+              <column datatype='integer' name='zipcode' ordinal='6' />
+              <column datatype='string' name='violation_code' ordinal='7' />
+              <column datatype='string' name='violation_description' ordinal='8' />
+              <column datatype='string' name='unit' ordinal='9' />
+              <column datatype='string' name='unit_description' ordinal='10' />
+              <column datatype='string' name='vehicle_make' ordinal='11' />
+              <column datatype='integer' name='fine_level1_amount' ordinal='12' />
+              <column datatype='integer' name='fine_level2_amount' ordinal='13' />
+              <column datatype='real' name='current_amount_due' ordinal='14' />
+              <column datatype='real' name='total_payments' ordinal='15' />
+              <column datatype='string' name='ticket_queue' ordinal='16' />
+              <column datatype='datetime' name='ticket_queue_date' ordinal='17' />
+              <column datatype='string' name='notice_level' ordinal='18' />
+              <column datatype='integer' name='notice_number' ordinal='19' />
+              <column datatype='string' name='hearing_disposition' ordinal='20' />
+              <column datatype='string' name='officer' ordinal='21' />
+              <column datatype='integer' name='year' ordinal='22' />
+              <column datatype='integer' name='month' ordinal='23' />
+              <column datatype='integer' name='hour' ordinal='24' />
+              <column datatype='string' name='location' ordinal='25' />
+              <column datatype='string' name='point' ordinal='26' />
+              <column datatype='real' name='lt' ordinal='27' />
+              <column datatype='real' name='ln' ordinal='28' />
+              <column datatype='integer' name='other' ordinal='29' />
+            </columns>
+          </relation>
+          <relation connection='textscan.17sqktl1docb9s17689361bkob01' name='traffic_crashes.csv' table='[traffic_crashes#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+              <column datatype='string' name='RD_NO' ordinal='0' />
+              <column datatype='string' name='CRASH_DATE_EST_I' ordinal='1' />
+              <column datatype='datetime' name='CRASH_DATE' ordinal='2' />
+              <column datatype='integer' name='POSTED_SPEED_LIMIT' ordinal='3' />
+              <column datatype='string' name='TRAFFIC_CONTROL_DEVICE' ordinal='4' />
+              <column datatype='string' name='DEVICE_CONDITION' ordinal='5' />
+              <column datatype='string' name='WEATHER_CONDITION' ordinal='6' />
+              <column datatype='string' name='LIGHTING_CONDITION' ordinal='7' />
+              <column datatype='string' name='FIRST_CRASH_TYPE' ordinal='8' />
+              <column datatype='string' name='TRAFFICWAY_TYPE' ordinal='9' />
+              <column datatype='integer' name='LANE_CNT' ordinal='10' />
+              <column datatype='string' name='ALIGNMENT' ordinal='11' />
+              <column datatype='string' name='ROADWAY_SURFACE_COND' ordinal='12' />
+              <column datatype='string' name='ROAD_DEFECT' ordinal='13' />
+              <column datatype='string' name='REPORT_TYPE' ordinal='14' />
+              <column datatype='string' name='CRASH_TYPE' ordinal='15' />
+              <column datatype='string' name='INTERSECTION_RELATED_I' ordinal='16' />
+              <column datatype='string' name='NOT_RIGHT_OF_WAY_I' ordinal='17' />
+              <column datatype='string' name='HIT_AND_RUN_I' ordinal='18' />
+              <column datatype='string' name='DAMAGE' ordinal='19' />
+              <column datatype='datetime' name='DATE_POLICE_NOTIFIED' ordinal='20' />
+              <column datatype='string' name='PRIM_CONTRIBUTORY_CAUSE' ordinal='21' />
+              <column datatype='string' name='SEC_CONTRIBUTORY_CAUSE' ordinal='22' />
+              <column datatype='integer' name='STREET_NO' ordinal='23' />
+              <column datatype='string' name='STREET_DIRECTION' ordinal='24' />
+              <column datatype='string' name='STREET_NAME' ordinal='25' />
+              <column datatype='integer' name='BEAT_OF_OCCURRENCE' ordinal='26' />
+              <column datatype='string' name='PHOTOS_TAKEN_I' ordinal='27' />
+              <column datatype='string' name='STATEMENTS_TAKEN_I' ordinal='28' />
+              <column datatype='string' name='DOORING_I' ordinal='29' />
+              <column datatype='string' name='WORK_ZONE_I' ordinal='30' />
+              <column datatype='string' name='WORK_ZONE_TYPE' ordinal='31' />
+              <column datatype='string' name='WORKERS_PRESENT_I' ordinal='32' />
+              <column datatype='integer' name='NUM_UNITS' ordinal='33' />
+              <column datatype='string' name='MOST_SEVERE_INJURY' ordinal='34' />
+              <column datatype='integer' name='INJURIES_TOTAL' ordinal='35' />
+              <column datatype='integer' name='INJURIES_FATAL' ordinal='36' />
+              <column datatype='integer' name='INJURIES_INCAPACITATING' ordinal='37' />
+              <column datatype='integer' name='INJURIES_NON_INCAPACITATING' ordinal='38' />
+              <column datatype='integer' name='INJURIES_REPORTED_NOT_EVIDENT' ordinal='39' />
+              <column datatype='integer' name='INJURIES_NO_INDICATION' ordinal='40' />
+              <column datatype='integer' name='INJURIES_UNKNOWN' ordinal='41' />
+              <column datatype='integer' name='CRASH_HOUR' ordinal='42' />
+              <column datatype='integer' name='CRASH_DAY_OF_WEEK' ordinal='43' />
+              <column datatype='integer' name='CRASH_MONTH' ordinal='44' />
+              <column datatype='real' name='LATITUDE' ordinal='45' />
+              <column datatype='real' name='LONGITUDE' ordinal='46' />
+              <column datatype='string' name='LOCATION' ordinal='47' />
+              <column datatype='integer' name='Join' ordinal='48' />
+            </columns>
+          </relation>
+        </relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[filelocation.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ticket_number</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[ticket_number]</local-name>
+            <parent-name>[filelocation.csv]</parent-name>
+            <remote-alias>ticket_number</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>issue_date</remote-name>
+            <remote-type>135</remote-type>
+            <local-name>[issue_date]</local-name>
+            <parent-name>[filelocation.csv]</parent-name>
+            <remote-alias>issue_date</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>datetime</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>violation_location</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[violation_location]</local-name>
+            <parent-name>[filelocation.csv]</parent-name>
+            <remote-alias>violation_location</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>license_plate_number</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[license_plate_number]</local-name>
+            <parent-name>[filelocation.csv]</parent-name>
+            <remote-alias>license_plate_number</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>license_plate_state</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[license_plate_state]</local-name>
+            <parent-name>[filelocation.csv]</parent-name>
+            <remote-alias>license_plate_state</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>license_plate_type</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[license_plate_type]</local-name>
+            <parent-name>[filelocation.csv]</parent-name>
+            <remote-alias>license_plate_type</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>zipcode</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[zipcode]</local-name>
+            <parent-name>[filelocation.csv]</parent-name>
+            <remote-alias>zipcode</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>violation_code</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[violation_code]</local-name>
+            <parent-name>[filelocation.csv]</parent-name>
+            <remote-alias>violation_code</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>violation_description</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[violation_description]</local-name>
+            <parent-name>[filelocation.csv]</parent-name>
+            <remote-alias>violation_description</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>unit</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[unit]</local-name>
+            <parent-name>[filelocation.csv]</parent-name>
+            <remote-alias>unit</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>unit_description</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[unit_description]</local-name>
+            <parent-name>[filelocation.csv]</parent-name>
+            <remote-alias>unit_description</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>vehicle_make</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[vehicle_make]</local-name>
+            <parent-name>[filelocation.csv]</parent-name>
+            <remote-alias>vehicle_make</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>fine_level1_amount</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[fine_level1_amount]</local-name>
+            <parent-name>[filelocation.csv]</parent-name>
+            <remote-alias>fine_level1_amount</remote-alias>
+            <ordinal>12</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>fine_level2_amount</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[fine_level2_amount]</local-name>
+            <parent-name>[filelocation.csv]</parent-name>
+            <remote-alias>fine_level2_amount</remote-alias>
+            <ordinal>13</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>current_amount_due</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[current_amount_due]</local-name>
+            <parent-name>[filelocation.csv]</parent-name>
+            <remote-alias>current_amount_due</remote-alias>
+            <ordinal>14</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>total_payments</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[total_payments]</local-name>
+            <parent-name>[filelocation.csv]</parent-name>
+            <remote-alias>total_payments</remote-alias>
+            <ordinal>15</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ticket_queue</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[ticket_queue]</local-name>
+            <parent-name>[filelocation.csv]</parent-name>
+            <remote-alias>ticket_queue</remote-alias>
+            <ordinal>16</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ticket_queue_date</remote-name>
+            <remote-type>135</remote-type>
+            <local-name>[ticket_queue_date]</local-name>
+            <parent-name>[filelocation.csv]</parent-name>
+            <remote-alias>ticket_queue_date</remote-alias>
+            <ordinal>17</ordinal>
+            <local-type>datetime</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>notice_level</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[notice_level]</local-name>
+            <parent-name>[filelocation.csv]</parent-name>
+            <remote-alias>notice_level</remote-alias>
+            <ordinal>18</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>notice_number</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[notice_number]</local-name>
+            <parent-name>[filelocation.csv]</parent-name>
+            <remote-alias>notice_number</remote-alias>
+            <ordinal>19</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>hearing_disposition</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[hearing_disposition]</local-name>
+            <parent-name>[filelocation.csv]</parent-name>
+            <remote-alias>hearing_disposition</remote-alias>
+            <ordinal>20</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>officer</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[officer]</local-name>
+            <parent-name>[filelocation.csv]</parent-name>
+            <remote-alias>officer</remote-alias>
+            <ordinal>21</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>year</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[year]</local-name>
+            <parent-name>[filelocation.csv]</parent-name>
+            <remote-alias>year</remote-alias>
+            <ordinal>22</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>month</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[month]</local-name>
+            <parent-name>[filelocation.csv]</parent-name>
+            <remote-alias>month</remote-alias>
+            <ordinal>23</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>hour</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[hour]</local-name>
+            <parent-name>[filelocation.csv]</parent-name>
+            <remote-alias>hour</remote-alias>
+            <ordinal>24</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>location</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[location]</local-name>
+            <parent-name>[filelocation.csv]</parent-name>
+            <remote-alias>location</remote-alias>
+            <ordinal>25</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>point</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[point]</local-name>
+            <parent-name>[filelocation.csv]</parent-name>
+            <remote-alias>point</remote-alias>
+            <ordinal>26</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>lt</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[lt]</local-name>
+            <parent-name>[filelocation.csv]</parent-name>
+            <remote-alias>lt</remote-alias>
+            <ordinal>27</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ln</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[ln]</local-name>
+            <parent-name>[filelocation.csv]</parent-name>
+            <remote-alias>ln</remote-alias>
+            <ordinal>28</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>other</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[other]</local-name>
+            <parent-name>[filelocation.csv]</parent-name>
+            <remote-alias>other</remote-alias>
+            <ordinal>29</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[traffic_crashes.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>RD_NO</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[RD_NO]</local-name>
+            <parent-name>[traffic_crashes.csv]</parent-name>
+            <remote-alias>RD_NO</remote-alias>
+            <ordinal>30</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>CRASH_DATE_EST_I</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[CRASH_DATE_EST_I]</local-name>
+            <parent-name>[traffic_crashes.csv]</parent-name>
+            <remote-alias>CRASH_DATE_EST_I</remote-alias>
+            <ordinal>31</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>CRASH_DATE</remote-name>
+            <remote-type>135</remote-type>
+            <local-name>[CRASH_DATE]</local-name>
+            <parent-name>[traffic_crashes.csv]</parent-name>
+            <remote-alias>CRASH_DATE</remote-alias>
+            <ordinal>32</ordinal>
+            <local-type>datetime</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>POSTED_SPEED_LIMIT</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[POSTED_SPEED_LIMIT]</local-name>
+            <parent-name>[traffic_crashes.csv]</parent-name>
+            <remote-alias>POSTED_SPEED_LIMIT</remote-alias>
+            <ordinal>33</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>TRAFFIC_CONTROL_DEVICE</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[TRAFFIC_CONTROL_DEVICE]</local-name>
+            <parent-name>[traffic_crashes.csv]</parent-name>
+            <remote-alias>TRAFFIC_CONTROL_DEVICE</remote-alias>
+            <ordinal>34</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>DEVICE_CONDITION</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[DEVICE_CONDITION]</local-name>
+            <parent-name>[traffic_crashes.csv]</parent-name>
+            <remote-alias>DEVICE_CONDITION</remote-alias>
+            <ordinal>35</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>WEATHER_CONDITION</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[WEATHER_CONDITION]</local-name>
+            <parent-name>[traffic_crashes.csv]</parent-name>
+            <remote-alias>WEATHER_CONDITION</remote-alias>
+            <ordinal>36</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>LIGHTING_CONDITION</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[LIGHTING_CONDITION]</local-name>
+            <parent-name>[traffic_crashes.csv]</parent-name>
+            <remote-alias>LIGHTING_CONDITION</remote-alias>
+            <ordinal>37</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>FIRST_CRASH_TYPE</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[FIRST_CRASH_TYPE]</local-name>
+            <parent-name>[traffic_crashes.csv]</parent-name>
+            <remote-alias>FIRST_CRASH_TYPE</remote-alias>
+            <ordinal>38</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>TRAFFICWAY_TYPE</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[TRAFFICWAY_TYPE]</local-name>
+            <parent-name>[traffic_crashes.csv]</parent-name>
+            <remote-alias>TRAFFICWAY_TYPE</remote-alias>
+            <ordinal>39</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>LANE_CNT</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[LANE_CNT]</local-name>
+            <parent-name>[traffic_crashes.csv]</parent-name>
+            <remote-alias>LANE_CNT</remote-alias>
+            <ordinal>40</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ALIGNMENT</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[ALIGNMENT]</local-name>
+            <parent-name>[traffic_crashes.csv]</parent-name>
+            <remote-alias>ALIGNMENT</remote-alias>
+            <ordinal>41</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ROADWAY_SURFACE_COND</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[ROADWAY_SURFACE_COND]</local-name>
+            <parent-name>[traffic_crashes.csv]</parent-name>
+            <remote-alias>ROADWAY_SURFACE_COND</remote-alias>
+            <ordinal>42</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ROAD_DEFECT</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[ROAD_DEFECT]</local-name>
+            <parent-name>[traffic_crashes.csv]</parent-name>
+            <remote-alias>ROAD_DEFECT</remote-alias>
+            <ordinal>43</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>REPORT_TYPE</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[REPORT_TYPE]</local-name>
+            <parent-name>[traffic_crashes.csv]</parent-name>
+            <remote-alias>REPORT_TYPE</remote-alias>
+            <ordinal>44</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>CRASH_TYPE</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[CRASH_TYPE]</local-name>
+            <parent-name>[traffic_crashes.csv]</parent-name>
+            <remote-alias>CRASH_TYPE</remote-alias>
+            <ordinal>45</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>INTERSECTION_RELATED_I</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[INTERSECTION_RELATED_I]</local-name>
+            <parent-name>[traffic_crashes.csv]</parent-name>
+            <remote-alias>INTERSECTION_RELATED_I</remote-alias>
+            <ordinal>46</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>NOT_RIGHT_OF_WAY_I</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[NOT_RIGHT_OF_WAY_I]</local-name>
+            <parent-name>[traffic_crashes.csv]</parent-name>
+            <remote-alias>NOT_RIGHT_OF_WAY_I</remote-alias>
+            <ordinal>47</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>HIT_AND_RUN_I</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[HIT_AND_RUN_I]</local-name>
+            <parent-name>[traffic_crashes.csv]</parent-name>
+            <remote-alias>HIT_AND_RUN_I</remote-alias>
+            <ordinal>48</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>DAMAGE</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[DAMAGE]</local-name>
+            <parent-name>[traffic_crashes.csv]</parent-name>
+            <remote-alias>DAMAGE</remote-alias>
+            <ordinal>49</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>DATE_POLICE_NOTIFIED</remote-name>
+            <remote-type>135</remote-type>
+            <local-name>[DATE_POLICE_NOTIFIED]</local-name>
+            <parent-name>[traffic_crashes.csv]</parent-name>
+            <remote-alias>DATE_POLICE_NOTIFIED</remote-alias>
+            <ordinal>50</ordinal>
+            <local-type>datetime</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>PRIM_CONTRIBUTORY_CAUSE</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[PRIM_CONTRIBUTORY_CAUSE]</local-name>
+            <parent-name>[traffic_crashes.csv]</parent-name>
+            <remote-alias>PRIM_CONTRIBUTORY_CAUSE</remote-alias>
+            <ordinal>51</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>SEC_CONTRIBUTORY_CAUSE</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[SEC_CONTRIBUTORY_CAUSE]</local-name>
+            <parent-name>[traffic_crashes.csv]</parent-name>
+            <remote-alias>SEC_CONTRIBUTORY_CAUSE</remote-alias>
+            <ordinal>52</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>STREET_NO</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[STREET_NO]</local-name>
+            <parent-name>[traffic_crashes.csv]</parent-name>
+            <remote-alias>STREET_NO</remote-alias>
+            <ordinal>53</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>STREET_DIRECTION</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[STREET_DIRECTION]</local-name>
+            <parent-name>[traffic_crashes.csv]</parent-name>
+            <remote-alias>STREET_DIRECTION</remote-alias>
+            <ordinal>54</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>STREET_NAME</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[STREET_NAME]</local-name>
+            <parent-name>[traffic_crashes.csv]</parent-name>
+            <remote-alias>STREET_NAME</remote-alias>
+            <ordinal>55</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>BEAT_OF_OCCURRENCE</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[BEAT_OF_OCCURRENCE]</local-name>
+            <parent-name>[traffic_crashes.csv]</parent-name>
+            <remote-alias>BEAT_OF_OCCURRENCE</remote-alias>
+            <ordinal>56</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>PHOTOS_TAKEN_I</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[PHOTOS_TAKEN_I]</local-name>
+            <parent-name>[traffic_crashes.csv]</parent-name>
+            <remote-alias>PHOTOS_TAKEN_I</remote-alias>
+            <ordinal>57</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>STATEMENTS_TAKEN_I</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[STATEMENTS_TAKEN_I]</local-name>
+            <parent-name>[traffic_crashes.csv]</parent-name>
+            <remote-alias>STATEMENTS_TAKEN_I</remote-alias>
+            <ordinal>58</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>DOORING_I</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[DOORING_I]</local-name>
+            <parent-name>[traffic_crashes.csv]</parent-name>
+            <remote-alias>DOORING_I</remote-alias>
+            <ordinal>59</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>WORK_ZONE_I</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[WORK_ZONE_I]</local-name>
+            <parent-name>[traffic_crashes.csv]</parent-name>
+            <remote-alias>WORK_ZONE_I</remote-alias>
+            <ordinal>60</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>WORK_ZONE_TYPE</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[WORK_ZONE_TYPE]</local-name>
+            <parent-name>[traffic_crashes.csv]</parent-name>
+            <remote-alias>WORK_ZONE_TYPE</remote-alias>
+            <ordinal>61</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>WORKERS_PRESENT_I</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[WORKERS_PRESENT_I]</local-name>
+            <parent-name>[traffic_crashes.csv]</parent-name>
+            <remote-alias>WORKERS_PRESENT_I</remote-alias>
+            <ordinal>62</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>NUM_UNITS</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[NUM_UNITS]</local-name>
+            <parent-name>[traffic_crashes.csv]</parent-name>
+            <remote-alias>NUM_UNITS</remote-alias>
+            <ordinal>63</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>MOST_SEVERE_INJURY</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[MOST_SEVERE_INJURY]</local-name>
+            <parent-name>[traffic_crashes.csv]</parent-name>
+            <remote-alias>MOST_SEVERE_INJURY</remote-alias>
+            <ordinal>64</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>INJURIES_TOTAL</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[INJURIES_TOTAL]</local-name>
+            <parent-name>[traffic_crashes.csv]</parent-name>
+            <remote-alias>INJURIES_TOTAL</remote-alias>
+            <ordinal>65</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>INJURIES_FATAL</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[INJURIES_FATAL]</local-name>
+            <parent-name>[traffic_crashes.csv]</parent-name>
+            <remote-alias>INJURIES_FATAL</remote-alias>
+            <ordinal>66</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>INJURIES_INCAPACITATING</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[INJURIES_INCAPACITATING]</local-name>
+            <parent-name>[traffic_crashes.csv]</parent-name>
+            <remote-alias>INJURIES_INCAPACITATING</remote-alias>
+            <ordinal>67</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>INJURIES_NON_INCAPACITATING</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[INJURIES_NON_INCAPACITATING]</local-name>
+            <parent-name>[traffic_crashes.csv]</parent-name>
+            <remote-alias>INJURIES_NON_INCAPACITATING</remote-alias>
+            <ordinal>68</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>INJURIES_REPORTED_NOT_EVIDENT</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[INJURIES_REPORTED_NOT_EVIDENT]</local-name>
+            <parent-name>[traffic_crashes.csv]</parent-name>
+            <remote-alias>INJURIES_REPORTED_NOT_EVIDENT</remote-alias>
+            <ordinal>69</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>INJURIES_NO_INDICATION</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[INJURIES_NO_INDICATION]</local-name>
+            <parent-name>[traffic_crashes.csv]</parent-name>
+            <remote-alias>INJURIES_NO_INDICATION</remote-alias>
+            <ordinal>70</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>INJURIES_UNKNOWN</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[INJURIES_UNKNOWN]</local-name>
+            <parent-name>[traffic_crashes.csv]</parent-name>
+            <remote-alias>INJURIES_UNKNOWN</remote-alias>
+            <ordinal>71</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>CRASH_HOUR</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[CRASH_HOUR]</local-name>
+            <parent-name>[traffic_crashes.csv]</parent-name>
+            <remote-alias>CRASH_HOUR</remote-alias>
+            <ordinal>72</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>CRASH_DAY_OF_WEEK</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[CRASH_DAY_OF_WEEK]</local-name>
+            <parent-name>[traffic_crashes.csv]</parent-name>
+            <remote-alias>CRASH_DAY_OF_WEEK</remote-alias>
+            <ordinal>73</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>CRASH_MONTH</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[CRASH_MONTH]</local-name>
+            <parent-name>[traffic_crashes.csv]</parent-name>
+            <remote-alias>CRASH_MONTH</remote-alias>
+            <ordinal>74</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>LATITUDE</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[LATITUDE]</local-name>
+            <parent-name>[traffic_crashes.csv]</parent-name>
+            <remote-alias>LATITUDE</remote-alias>
+            <ordinal>75</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>LONGITUDE</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[LONGITUDE]</local-name>
+            <parent-name>[traffic_crashes.csv]</parent-name>
+            <remote-alias>LONGITUDE</remote-alias>
+            <ordinal>76</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>LOCATION</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[LOCATION]</local-name>
+            <parent-name>[traffic_crashes.csv]</parent-name>
+            <remote-alias>LOCATION</remote-alias>
+            <ordinal>77</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Join</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Join]</local-name>
+            <parent-name>[traffic_crashes.csv]</parent-name>
+            <remote-alias>Join</remote-alias>
+            <ordinal>78</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='Alignment' datatype='string' name='[ALIGNMENT]' role='dimension' type='nominal' />
+      <column caption='Beat Of Occurrence' datatype='integer' name='[BEAT_OF_OCCURRENCE]' role='measure' type='quantitative' />
+      <column caption='Crash Date' datatype='datetime' name='[CRASH_DATE]' role='dimension' type='ordinal' />
+      <column caption='Crash Date Est I' datatype='string' name='[CRASH_DATE_EST_I]' role='dimension' type='nominal' />
+      <column caption='Crash Day Of Week' datatype='integer' name='[CRASH_DAY_OF_WEEK]' role='dimension' type='quantitative' />
+      <column caption='Crash Hour' datatype='integer' name='[CRASH_HOUR]' role='measure' type='quantitative' />
+      <column caption='Crash Month' datatype='integer' name='[CRASH_MONTH]' role='dimension' type='quantitative' />
+      <column caption='Crash Type' datatype='string' name='[CRASH_TYPE]' role='dimension' type='nominal' />
+      <column caption='Damage' datatype='string' name='[DAMAGE]' role='dimension' type='nominal' />
+      <column caption='Date Police Notified' datatype='datetime' name='[DATE_POLICE_NOTIFIED]' role='dimension' type='ordinal' />
+      <column caption='Device Condition' datatype='string' name='[DEVICE_CONDITION]' role='dimension' type='nominal' />
+      <column caption='Dooring I' datatype='string' name='[DOORING_I]' role='dimension' type='nominal' />
+      <column caption='First Crash Type' datatype='string' name='[FIRST_CRASH_TYPE]' role='dimension' type='nominal' />
+      <column caption='Hit And Run I' datatype='string' name='[HIT_AND_RUN_I]' role='dimension' type='nominal' />
+      <column caption='Injuries Fatal' datatype='integer' name='[INJURIES_FATAL]' role='measure' type='quantitative' />
+      <column caption='Injuries Incapacitating' datatype='integer' name='[INJURIES_INCAPACITATING]' role='measure' type='quantitative' />
+      <column caption='Injuries Non Incapacitating' datatype='integer' name='[INJURIES_NON_INCAPACITATING]' role='measure' type='quantitative' />
+      <column caption='Injuries No Indication' datatype='integer' name='[INJURIES_NO_INDICATION]' role='measure' type='quantitative' />
+      <column caption='Injuries Reported Not Evident' datatype='integer' name='[INJURIES_REPORTED_NOT_EVIDENT]' role='measure' type='quantitative' />
+      <column caption='Injuries Total' datatype='integer' name='[INJURIES_TOTAL]' role='measure' type='quantitative' />
+      <column caption='Injuries Unknown' datatype='integer' name='[INJURIES_UNKNOWN]' role='measure' type='quantitative' />
+      <column caption='Intersection Related I' datatype='string' name='[INTERSECTION_RELATED_I]' role='dimension' type='nominal' />
+      <column aggregation='Sum' caption='Crash' datatype='integer' name='[Join]' role='dimension' type='ordinal'>
+        <aliases>
+          <alias key='1' value='Location' />
+        </aliases>
+      </column>
+      <column caption='Lane Cnt' datatype='integer' name='[LANE_CNT]' role='measure' type='quantitative' />
+      <column aggregation='Avg' caption='Latitude' datatype='real' name='[LATITUDE]' role='measure' semantic-role='[Geographical].[Latitude]' type='quantitative' />
+      <column caption='Lighting Condition' datatype='string' name='[LIGHTING_CONDITION]' role='dimension' type='nominal' />
+      <column caption='Location1' datatype='string' name='[LOCATION]' role='dimension' type='nominal' />
+      <column aggregation='Avg' caption='Longitude' datatype='real' name='[LONGITUDE]' role='measure' semantic-role='[Geographical].[Longitude]' type='quantitative' />
+      <column caption='Most Severe Injury' datatype='string' name='[MOST_SEVERE_INJURY]' role='dimension' type='nominal' />
+      <column caption='Not Right Of Way I' datatype='string' name='[NOT_RIGHT_OF_WAY_I]' role='dimension' type='nominal' />
+      <column caption='Num Units' datatype='integer' name='[NUM_UNITS]' role='measure' type='quantitative' />
+      <column datatype='integer' name='[Number of Records]' role='measure' type='quantitative' user:auto-column='numrec'>
+        <calculation class='tableau' formula='1' />
+      </column>
+      <column caption='Photos Taken I' datatype='string' name='[PHOTOS_TAKEN_I]' role='dimension' type='nominal' />
+      <column caption='Posted Speed Limit' datatype='integer' name='[POSTED_SPEED_LIMIT]' role='measure' type='quantitative' />
+      <column caption='Prim Contributory Cause' datatype='string' name='[PRIM_CONTRIBUTORY_CAUSE]' role='dimension' type='nominal' />
+      <column caption='Rd No' datatype='string' name='[RD_NO]' role='dimension' type='nominal' />
+      <column caption='Report Type' datatype='string' name='[REPORT_TYPE]' role='dimension' type='nominal' />
+      <column caption='Roadway Surface Cond' datatype='string' name='[ROADWAY_SURFACE_COND]' role='dimension' type='nominal' />
+      <column caption='Road Defect' datatype='string' name='[ROAD_DEFECT]' role='dimension' type='nominal' />
+      <column caption='Sec Contributory Cause' datatype='string' name='[SEC_CONTRIBUTORY_CAUSE]' role='dimension' type='nominal' />
+      <column caption='Statements Taken I' datatype='string' name='[STATEMENTS_TAKEN_I]' role='dimension' type='nominal' />
+      <column caption='Street Direction' datatype='string' name='[STREET_DIRECTION]' role='dimension' type='nominal' />
+      <column caption='Street Name' datatype='string' name='[STREET_NAME]' role='dimension' type='nominal' />
+      <column caption='Street No' datatype='integer' name='[STREET_NO]' role='measure' type='quantitative' />
+      <column caption='Trafficway Type' datatype='string' name='[TRAFFICWAY_TYPE]' role='dimension' type='nominal' />
+      <column caption='Traffic Control Device' datatype='string' name='[TRAFFIC_CONTROL_DEVICE]' role='dimension' type='nominal' />
+      <column caption='Weather Condition' datatype='string' name='[WEATHER_CONDITION]' role='dimension' type='nominal' />
+      <column caption='Workers Present I' datatype='string' name='[WORKERS_PRESENT_I]' role='dimension' type='nominal' />
+      <column caption='Work Zone I' datatype='string' name='[WORK_ZONE_I]' role='dimension' type='nominal' />
+      <column caption='Work Zone Type' datatype='string' name='[WORK_ZONE_TYPE]' role='dimension' type='nominal' />
+      <column caption='Current Amount Due' datatype='real' name='[current_amount_due]' role='measure' type='quantitative' />
+      <column caption='Fine Level1 Amount' datatype='integer' name='[fine_level1_amount]' role='measure' type='quantitative' />
+      <column caption='Fine Level2 Amount' datatype='integer' name='[fine_level2_amount]' role='measure' type='quantitative' />
+      <column caption='Hearing Disposition' datatype='string' name='[hearing_disposition]' role='dimension' type='nominal' />
+      <column caption='Hour' datatype='integer' name='[hour]' role='measure' type='quantitative' />
+      <column caption='Issue Date' datatype='datetime' name='[issue_date]' role='dimension' type='ordinal' />
+      <column caption='License Plate Number' datatype='string' name='[license_plate_number]' role='dimension' type='nominal' />
+      <column caption='License Plate State' datatype='string' name='[license_plate_state]' role='dimension' semantic-role='[State].[Name]' type='nominal' />
+      <column caption='License Plate Type' datatype='string' name='[license_plate_type]' role='dimension' type='nominal' />
+      <column aggregation='Avg' caption='Ln' datatype='real' name='[ln]' role='measure' semantic-role='[Geographical].[Longitude]' type='quantitative' />
+      <column caption='Location' datatype='string' name='[location]' role='dimension' type='nominal' />
+      <column aggregation='Avg' caption='Lt' datatype='real' name='[lt]' role='measure' semantic-role='[Geographical].[Latitude]' type='quantitative' />
+      <column caption='Month' datatype='integer' name='[month]' role='dimension' type='quantitative' />
+      <column caption='Notice Level' datatype='string' name='[notice_level]' role='dimension' type='nominal' />
+      <column caption='Notice Number' datatype='integer' name='[notice_number]' role='dimension' type='ordinal' />
+      <column caption='Officer' datatype='string' name='[officer]' role='dimension' type='nominal' />
+      <column caption='Other' datatype='integer' name='[other]' role='measure' type='quantitative' />
+      <column caption='lat' datatype='string' name='[point - Split 1 - Split 1]' role='dimension' type='nominal' user:SplitFieldIndex='4' user:SplitFieldOrigin='[federated.02p8d8a0natvcf1cx7h7r1fyppc2].[point - Split 1]'>
+        <calculation class='tableau' formula='TRIM( SPLIT( [point - Split 1], &quot;(&quot;, -1 ) )' />
+      </column>
+      <column caption='Point' datatype='string' name='[point]' role='dimension' type='nominal' />
+      <column caption='Ticket Number' datatype='integer' name='[ticket_number]' role='dimension' type='ordinal' />
+      <column caption='Ticket Queue' datatype='string' name='[ticket_queue]' role='dimension' type='nominal' />
+      <column caption='Ticket Queue Date' datatype='datetime' name='[ticket_queue_date]' role='dimension' type='ordinal' />
+      <column caption='Total Payments' datatype='real' name='[total_payments]' role='measure' type='quantitative' />
+      <column caption='Unit' datatype='string' name='[unit]' role='dimension' type='nominal' />
+      <column caption='Unit Description' datatype='string' name='[unit_description]' role='dimension' type='nominal' />
+      <column caption='Vehicle Make' datatype='string' name='[vehicle_make]' role='dimension' type='nominal' />
+      <column caption='Violation Code' datatype='string' name='[violation_code]' role='dimension' type='nominal' />
+      <column caption='Violation Description' datatype='string' name='[violation_description]' role='dimension' type='nominal' />
+      <column caption='Violation Location' datatype='string' name='[violation_location]' role='dimension' type='nominal' />
+      <column caption='Year' datatype='integer' name='[year]' role='dimension' type='quantitative' />
+      <column caption='Zipcode' datatype='integer' default-format='*00000' name='[zipcode]' role='dimension' semantic-role='[ZipCode].[Name]' type='ordinal' />
+      <column-instance column='[LATITUDE]' derivation='Avg' name='[avg:LATITUDE:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[lt]' derivation='Avg' name='[avg:lt:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Join]' derivation='None' name='[none:Join:ok]' pivot='key' type='ordinal' />
+      <column-instance column='[LATITUDE]' derivation='None' name='[none:LATITUDE:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[ln]' derivation='None' name='[none:ln:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[lt]' derivation='None' name='[none:lt:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[unit_description]' derivation='None' name='[none:unit_description:nk]' pivot='key' type='nominal' />
+      <layout dim-ordering='alphabetic' dim-percentage='0.458438' measure-ordering='alphabetic' measure-percentage='0.541562' show-structure='true' user-set-layout='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[:Measure Names]' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.02p8d8a0natvcf1cx7h7r1fyppc2].[avg:LATITUDE:qk]&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.02p8d8a0natvcf1cx7h7r1fyppc2].[none:LATITUDE:qk]&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;[federated.02p8d8a0natvcf1cx7h7r1fyppc2].[avg:lt:qk]&quot;</bucket>
+            </map>
+            <map to='#9c755f'>
+              <bucket>&quot;[federated.02p8d8a0natvcf1cx7h7r1fyppc2]&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;[federated.02p8d8a0natvcf1cx7h7r1fyppc2].[none:ln:qk]&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;[federated.02p8d8a0natvcf1cx7h7r1fyppc2].[sum:ln:qk]&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;[federated.02p8d8a0natvcf1cx7h7r1fyppc2].[none:lt:qk]&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;[federated.02p8d8a0natvcf1cx7h7r1fyppc2].[sum:lt:qk]&quot;</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[none:unit_description:nk]' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>&quot;Speed&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Red Light&quot;</bucket>
+            </map>
+          </encoding>
+          <encoding attr='shape' field='[none:Join:ok]' type='shape'>
+            <map to=':filled/asterisk'>
+              <bucket>1</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;USA&quot;' />
+      </semantic-values>
+      <filter class='quantitative' column='[ln]' filter-group='2' included-values='in-range'>
+        <min>-88.125016000000002</min>
+        <max>0.0</max>
+      </filter>
+    </datasource>
+  </datasources>
+  <mapsources>
+    <mapsource name='Tableau' />
+  </mapsources>
+  <actions>
+    <action caption='Highlight 1 (generated)' name='[Action1]'>
+      <activation auto-clear='true' type='on-select' />
+      <source type='sheet' worksheet='Sheet 1' />
+      <command command='tsc:brush'>
+        <param name='field-captions' value='Crash,Unit Description' />
+        <param name='target' value='Sheet 1' />
+      </command>
+    </action>
+  </actions>
+  <worksheets>
+    <worksheet name='Sheet 1'>
+      <layout-options>
+        <title>
+          <formatted-text />
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Input_Data' name='federated.02p8d8a0natvcf1cx7h7r1fyppc2' />
+          </datasources>
+          <mapsources>
+            <mapsource name='Tableau' />
+          </mapsources>
+          <datasource-dependencies datasource='federated.02p8d8a0natvcf1cx7h7r1fyppc2'>
+            <column aggregation='Sum' caption='Crash' datatype='integer' name='[Join]' role='dimension' type='ordinal'>
+              <aliases>
+                <alias key='1' value='Location' />
+              </aliases>
+            </column>
+            <column aggregation='Avg' caption='Latitude' datatype='real' name='[LATITUDE]' role='measure' semantic-role='[Geographical].[Latitude]' type='quantitative' />
+            <column aggregation='Avg' caption='Longitude' datatype='real' name='[LONGITUDE]' role='measure' semantic-role='[Geographical].[Longitude]' type='quantitative' />
+            <column-instance column='[LATITUDE]' derivation='Avg' name='[avg:LATITUDE:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[LONGITUDE]' derivation='Avg' name='[avg:LONGITUDE:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[ln]' derivation='Avg' name='[avg:ln:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[lt]' derivation='Avg' name='[avg:lt:qk]' pivot='key' type='quantitative' />
+            <column aggregation='Avg' caption='Ln' datatype='real' name='[ln]' role='measure' semantic-role='[Geographical].[Longitude]' type='quantitative' />
+            <column aggregation='Avg' caption='Lt' datatype='real' name='[lt]' role='measure' semantic-role='[Geographical].[Latitude]' type='quantitative' />
+            <column-instance column='[Join]' derivation='None' name='[none:Join:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[unit_description]' derivation='None' name='[none:unit_description:nk]' pivot='key' type='nominal' />
+            <column caption='Unit Description' datatype='string' name='[unit_description]' role='dimension' type='nominal' />
+          </datasource-dependencies>
+          <aggregation value='false' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <encoding attr='space' class='0' field='[federated.02p8d8a0natvcf1cx7h7r1fyppc2].[Longitude (generated)]' field-type='quantitative' max='-9728601.7556559406' min='-9778221.1488930956' projection='EPSG:3857' range-type='fixed' scope='cols' type='space' />
+            <encoding attr='space' class='0' field='[federated.02p8d8a0natvcf1cx7h7r1fyppc2].[Latitude (generated)]' field-type='quantitative' max='5165060.1237329822' min='5109075.0852755439' projection='EPSG:3857' range-type='fixed' scope='rows' type='space' />
+            <encoding attr='space' class='1' field='[federated.02p8d8a0natvcf1cx7h7r1fyppc2].[Longitude (generated)]' field-type='quantitative' fold='true' max='-9728601.7556559406' min='-9778221.1488930956' projection='EPSG:3857' range-type='fixed' scope='cols' type='space' />
+          </style-rule>
+          <style-rule element='table'>
+            <format attr='show-null-value-warning' value='false' />
+          </style-rule>
+          <style-rule element='dropline'>
+            <format attr='stroke-size' value='1' />
+            <format attr='line-visibility' value='on' />
+            <format attr='line-pattern-only' value='solid' />
+          </style-rule>
+          <style-rule element='legend'>
+            <format attr='border-style' value='solid' />
+            <format attr='background-color' value='#ffffff' />
+            <format attr='border-color' value='#684e3f' />
+            <format attr='border-width' value='2' />
+            <format attr='color' value='#684e3f' />
+          </style-rule>
+          <style-rule element='legend-title'>
+            <format attr='color' value='#684e3f' />
+            <format attr='font-weight' value='bold' />
+          </style-rule>
+          <style-rule element='legend-title-text'>
+            <format attr='map' value='2016 Population'>
+              <formatted-text>
+                <run fontalignment='1'>2016 Population</run>
+              </formatted-text>
+            </format>
+            <format attr='color' field='[federated.02p8d8a0natvcf1cx7h7r1fyppc2].[none:unit_description:nk]' value='Violation Type'>
+              <formatted-text>
+                <run>Violation Type</run>
+              </formatted-text>
+            </format>
+          </style-rule>
+          <style-rule element='map-layer'>
+            <format attr='enabled' id='hillshade_highlight_bright' value='true' />
+            <format attr='enabled' id='hillshade_highlight_med' value='true' />
+            <format attr='enabled' id='hillshade_shadow_faint' value='true' />
+            <format attr='enabled' id='hillshade_shadow_med' value='true' />
+            <format attr='enabled' id='hillshade_shadow_dark' value='true' />
+            <format attr='enabled' id='hillshade_shadow_extreme' value='true' />
+            <format attr='enabled' id='tunnel-service-link-track-case' value='true' />
+            <format attr='enabled' id='tunnel-street_limited-case' value='true' />
+            <format attr='enabled' id='tunnel-street-case' value='true' />
+            <format attr='enabled' id='tunnel-secondary-tertiary-case' value='true' />
+            <format attr='enabled' id='tunnel-primary-case' value='true' />
+            <format attr='enabled' id='tunnel-trunk_link-case' value='true' />
+            <format attr='enabled' id='tunnel-motorway_link-case' value='true' />
+            <format attr='enabled' id='tunnel-trunk-case' value='true' />
+            <format attr='enabled' id='tunnel-motorway-case' value='true' />
+            <format attr='enabled' id='tunnel-trunk_link' value='true' />
+            <format attr='enabled' id='tunnel-motorway_link' value='true' />
+            <format attr='enabled' id='tunnel-service-link-track' value='true' />
+            <format attr='enabled' id='tunnel-street_limited' value='true' />
+            <format attr='enabled' id='tunnel-street' value='true' />
+            <format attr='enabled' id='tunnel-tertiary' value='true' />
+            <format attr='enabled' id='tunnel-secondary' value='true' />
+            <format attr='enabled' id='tunnel-primary' value='true' />
+            <format attr='enabled' id='tunnel-trunk' value='true' />
+            <format attr='enabled' id='tunnel-motorway' value='true' />
+            <format attr='enabled' id='road-street-low' value='true' />
+            <format attr='enabled' id='road-street_limited-low' value='true' />
+            <format attr='enabled' id='road-pedestrian-case' value='true' />
+            <format attr='enabled' id='road-service-link-track-case' value='true' />
+            <format attr='enabled' id='road-street_limited-case' value='true' />
+            <format attr='enabled' id='road-street-case' value='true' />
+            <format attr='enabled' id='road-tertiary-case' value='true' />
+            <format attr='enabled' id='road-secondary-case' value='true' />
+            <format attr='enabled' id='road-primary-case' value='true' />
+            <format attr='enabled' id='road-motorway_link-case' value='true' />
+            <format attr='enabled' id='road-trunk_link-case' value='true' />
+            <format attr='enabled' id='road-trunk-case' value='true' />
+            <format attr='enabled' id='road-motorway-case' value='true' />
+            <format attr='enabled' id='road-trunk_link' value='true' />
+            <format attr='enabled' id='road-motorway_link' value='true' />
+            <format attr='enabled' id='road-path' value='true' />
+            <format attr='enabled' id='road-pedestrian' value='true' />
+            <format attr='enabled' id='road-polygon' value='true' />
+            <format attr='enabled' id='road-service-link-track' value='true' />
+            <format attr='enabled' id='road-street_limited' value='true' />
+            <format attr='enabled' id='road-street' value='true' />
+            <format attr='enabled' id='road-tertiary' value='true' />
+            <format attr='enabled' id='road-secondary' value='true' />
+            <format attr='enabled' id='road-primary' value='true' />
+            <format attr='enabled' id='road-trunk' value='true' />
+            <format attr='enabled' id='road-motorway' value='true' />
+            <format attr='enabled' id='road-rail' value='true' />
+            <format attr='enabled' id='road-rail-tracks' value='true' />
+            <format attr='enabled' id='bridge-street-low' value='true' />
+            <format attr='enabled' id='bridge-street_limited-low' value='true' />
+            <format attr='enabled' id='bridge-pedestrian-case' value='true' />
+            <format attr='enabled' id='bridge-service-link-track-case' value='true' />
+            <format attr='enabled' id='bridge-street_limited-case' value='true' />
+            <format attr='enabled' id='bridge-street-case' value='true' />
+            <format attr='enabled' id='bridge-tertiary-case' value='true' />
+            <format attr='enabled' id='bridge-secondary-case' value='true' />
+            <format attr='enabled' id='bridge-primary-case' value='true' />
+            <format attr='enabled' id='bridge-trunk_link-case' value='true' />
+            <format attr='enabled' id='bridge-motorway_link-case' value='true' />
+            <format attr='enabled' id='bridge-trunk-case' value='true' />
+            <format attr='enabled' id='bridge-motorway-case' value='true' />
+            <format attr='enabled' id='bridge-trunk_link' value='true' />
+            <format attr='enabled' id='bridge-motorway_link' value='true' />
+            <format attr='enabled' id='bridge-path' value='true' />
+            <format attr='enabled' id='bridge-pedestrian' value='true' />
+            <format attr='enabled' id='bridge-service-link-track' value='true' />
+            <format attr='enabled' id='bridge-street_limited' value='true' />
+            <format attr='enabled' id='bridge-street' value='true' />
+            <format attr='enabled' id='bridge-tertiary' value='true' />
+            <format attr='enabled' id='bridge-secondary' value='true' />
+            <format attr='enabled' id='bridge-primary' value='true' />
+            <format attr='enabled' id='bridge-trunk' value='true' />
+            <format attr='enabled' id='bridge-motorway' value='true' />
+            <format attr='enabled' id='bridge-rail' value='true' />
+            <format attr='enabled' id='bridge-rail-tracks' value='true' />
+            <format attr='enabled' id='bridge-trunk_link-2-case' value='true' />
+            <format attr='enabled' id='bridge-motorway_link-2-case' value='true' />
+            <format attr='enabled' id='bridge-trunk-2-case' value='true' />
+            <format attr='enabled' id='bridge-motorway-2-case' value='true' />
+            <format attr='enabled' id='bridge-trunk_link-2' value='true' />
+            <format attr='enabled' id='bridge-motorway_link-2' value='true' />
+            <format attr='enabled' id='bridge-trunk-2' value='true' />
+            <format attr='enabled' id='bridge-motorway-2' value='true' />
+            <format attr='enabled' id='road-shields-2-white' value='true' />
+            <format attr='enabled' id='road-shields-2-black' value='true' />
+            <format attr='enabled' id='road-shields-1-white' value='true' />
+            <format attr='enabled' id='road-shields-1-black' value='true' />
+            <format attr='enabled' id='road-label-small' value='true' />
+            <format attr='enabled' id='road-label-big' value='true' />
+            <format attr='enabled' id='place-village' value='true' />
+            <format attr='enabled' id='place-town' value='true' />
+            <format attr='enabled' id='place-islands' value='true' />
+            <format attr='enabled' id='place-city-sm' value='true' />
+            <format attr='enabled' id='place-city-md-s' value='true' />
+            <format attr='enabled' id='place-city-md-n' value='true' />
+            <format attr='enabled' id='place-city-lg-s' value='true' />
+            <format attr='enabled' id='place-city-lg-n' value='true' />
+            <format attr='enabled' id='place-capital-s' value='true' />
+            <format attr='enabled' id='place-capital-n' value='true' />
+            <format attr='enabled' id='b01002_001e' value='false' />
+            <format attr='enabled' id='b01002_002e' value='false' />
+            <format attr='enabled' id='b01002_003e' value='false' />
+            <format attr='enabled' id='dp02_0001e' value='false' />
+            <format attr='enabled' id='dp02_0015e' value='false' />
+            <format attr='enabled' id='dp03_0027e_plus_dp03_0029e' value='false' />
+            <format attr='enabled' id='dp03_0028e' value='false' />
+            <format attr='enabled' id='dp03_0030e_plus_dp03_0031e' value='false' />
+            <format attr='enabled' id='dp03_0062e' value='false' />
+            <format attr='enabled' id='dp03_0088e' value='false' />
+            <format attr='enabled' id='dp04_0001e' value='false' />
+            <format attr='enabled' id='dp04_0046e' value='false' />
+            <format attr='enabled' id='dp04_0047e' value='false' />
+            <format attr='enabled' id='dp04_0089e' value='false' />
+            <format attr='enabled' id='dp05_0001e' value='true' />
+            <format attr='enabled' id='dp05_0002e_div_dp05_0003e' value='false' />
+            <format attr='enabled' id='dp05_0032e' value='false' />
+            <format attr='enabled' id='dp05_0033e' value='false' />
+            <format attr='enabled' id='dp05_0034e' value='false' />
+            <format attr='enabled' id='dp05_0039e' value='false' />
+            <format attr='enabled' id='dp05_0047e' value='false' />
+            <format attr='enabled' id='dp05_0053e' value='false' />
+            <format attr='enabled' id='dp05_0066e' value='false' />
+            <format attr='enabled' id='dp05_0077e' value='false' />
+          </style-rule>
+          <style-rule element='map'>
+            <format attr='washout' value='0' />
+            <format attr='map-style' value='light' />
+            <format attr='wrap' value='false' />
+          </style-rule>
+          <style-rule element='map-data-layer'>
+            <format attr='palette' value='tableau-map-grey-light' />
+            <format attr='geo-area-type' value='Tract' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane id='36' selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='on' />
+            </view>
+            <mark class='Multipolygon' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='size' value='0.84558010101318359' />
+                <format attr='shape' value=':filled/circle' />
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='false' />
+                <format attr='mark-color' value='#684e3f' />
+                <format attr='has-halo' value='false' />
+                <format attr='mark-transparency' value='255' />
+              </style-rule>
+            </style>
+          </pane>
+          <pane id='37' selection-relaxation-option='selection-relaxation-allow' x-axis-name='[federated.02p8d8a0natvcf1cx7h7r1fyppc2].[Longitude (generated)]'>
+            <view>
+              <breakdown value='on' />
+            </view>
+            <mark class='Multipolygon' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <encodings>
+              <lod column='[federated.02p8d8a0natvcf1cx7h7r1fyppc2].[avg:ln:qk]' />
+              <lod column='[federated.02p8d8a0natvcf1cx7h7r1fyppc2].[avg:lt:qk]' />
+              <color column='[federated.02p8d8a0natvcf1cx7h7r1fyppc2].[none:unit_description:nk]' />
+              <geometry column='[federated.02p8d8a0natvcf1cx7h7r1fyppc2].[Geometry (generated)]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='size' value='0.84558010101318359' />
+                <format attr='shape' value=':filled/circle' />
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='false' />
+                <format attr='mark-color' value='#684e3f' />
+                <format attr='has-halo' value='false' />
+                <format attr='mark-transparency' value='255' />
+              </style-rule>
+            </style>
+          </pane>
+          <pane id='38' selection-relaxation-option='selection-relaxation-allow' x-axis-name='[federated.02p8d8a0natvcf1cx7h7r1fyppc2].[Longitude (generated)]' x-index='1'>
+            <view>
+              <breakdown value='on' />
+            </view>
+            <mark class='Shape' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <encodings>
+              <lod column='[federated.02p8d8a0natvcf1cx7h7r1fyppc2].[avg:LATITUDE:qk]' />
+              <lod column='[federated.02p8d8a0natvcf1cx7h7r1fyppc2].[avg:LONGITUDE:qk]' />
+              <shape column='[federated.02p8d8a0natvcf1cx7h7r1fyppc2].[none:Join:ok]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='size' value='1' />
+                <format attr='shape' value=':filled/asterisk' />
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='false' />
+                <format attr='mark-color' value='#666666' />
+                <format attr='has-halo' value='false' />
+                <format attr='mark-transparency' value='255' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.02p8d8a0natvcf1cx7h7r1fyppc2].[Latitude (generated)]</rows>
+        <cols>([federated.02p8d8a0natvcf1cx7h7r1fyppc2].[Longitude (generated)] + [federated.02p8d8a0natvcf1cx7h7r1fyppc2].[Longitude (generated)])</cols>
+      </table>
+      <simple-id uuid='{CD8D4D5D-ABCC-4C74-B990-1B3A48B4B417}' />
+    </worksheet>
+    <worksheet name='Sheet 1 (3)'>
+      <layout-options>
+        <title>
+          <formatted-text />
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Input_Data' name='federated.02p8d8a0natvcf1cx7h7r1fyppc2' />
+          </datasources>
+          <mapsources>
+            <mapsource name='Tableau' />
+          </mapsources>
+          <datasource-dependencies datasource='federated.02p8d8a0natvcf1cx7h7r1fyppc2'>
+            <column aggregation='Sum' caption='Crash' datatype='integer' name='[Join]' role='dimension' type='ordinal'>
+              <aliases>
+                <alias key='1' value='Location' />
+              </aliases>
+            </column>
+            <column aggregation='Avg' caption='Latitude' datatype='real' name='[LATITUDE]' role='measure' semantic-role='[Geographical].[Latitude]' type='quantitative' />
+            <column aggregation='Avg' caption='Longitude' datatype='real' name='[LONGITUDE]' role='measure' semantic-role='[Geographical].[Longitude]' type='quantitative' />
+            <column-instance column='[LATITUDE]' derivation='Avg' name='[avg:LATITUDE:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[LONGITUDE]' derivation='Avg' name='[avg:LONGITUDE:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[ln]' derivation='Avg' name='[avg:ln:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[lt]' derivation='Avg' name='[avg:lt:qk]' pivot='key' type='quantitative' />
+            <column aggregation='Avg' caption='Ln' datatype='real' name='[ln]' role='measure' semantic-role='[Geographical].[Longitude]' type='quantitative' />
+            <column aggregation='Avg' caption='Lt' datatype='real' name='[lt]' role='measure' semantic-role='[Geographical].[Latitude]' type='quantitative' />
+            <column-instance column='[Join]' derivation='None' name='[none:Join:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[unit_description]' derivation='None' name='[none:unit_description:nk]' pivot='key' type='nominal' />
+            <column caption='Unit Description' datatype='string' name='[unit_description]' role='dimension' type='nominal' />
+          </datasource-dependencies>
+          <aggregation value='false' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <encoding attr='space' class='0' field='[federated.02p8d8a0natvcf1cx7h7r1fyppc2].[Longitude (generated)]' field-type='quantitative' max='-9746688.4735274334' min='-9767341.2355008684' projection='EPSG:3857' range-type='fixed' scope='cols' type='space' />
+            <encoding attr='space' class='0' field='[federated.02p8d8a0natvcf1cx7h7r1fyppc2].[Latitude (generated)]' field-type='quantitative' max='5147649.2199908691' min='5136572.8777755229' projection='EPSG:3857' range-type='fixed' scope='rows' type='space' />
+            <encoding attr='space' class='1' field='[federated.02p8d8a0natvcf1cx7h7r1fyppc2].[Longitude (generated)]' field-type='quantitative' fold='true' max='-9746688.4735274334' min='-9767341.2355008684' projection='EPSG:3857' range-type='fixed' scope='cols' type='space' />
+          </style-rule>
+          <style-rule element='table'>
+            <format attr='show-null-value-warning' value='false' />
+          </style-rule>
+          <style-rule element='dropline'>
+            <format attr='stroke-size' value='1' />
+            <format attr='line-visibility' value='on' />
+            <format attr='line-pattern-only' value='solid' />
+          </style-rule>
+          <style-rule element='legend'>
+            <format attr='border-style' value='solid' />
+            <format attr='background-color' value='#ffffff' />
+            <format attr='border-color' value='#684e3f' />
+            <format attr='border-width' value='2' />
+            <format attr='color' value='#684e3f' />
+          </style-rule>
+          <style-rule element='legend-title'>
+            <format attr='color' value='#684e3f' />
+            <format attr='font-weight' value='bold' />
+          </style-rule>
+          <style-rule element='legend-title-text'>
+            <format attr='map' value='2016 Population' />
+            <format attr='color' field='[federated.02p8d8a0natvcf1cx7h7r1fyppc2].[none:unit_description:nk]' value='Types of Violation'>
+              <formatted-text>
+                <run fontalignment='1'>Types of Violation</run>
+              </formatted-text>
+            </format>
+            <format attr='shape' field='[federated.02p8d8a0natvcf1cx7h7r1fyppc2].[none:Join:ok]' value='Crash'>
+              <formatted-text>
+                <run fontalignment='1'>Crash</run>
+              </formatted-text>
+            </format>
+          </style-rule>
+          <style-rule element='annotation'>
+            <format attr='stroke-size' id='annotation_0' value='2' />
+            <format attr='stroke-color' id='annotation_0' value='#e15759' />
+            <format attr='border-style' id='annotation_0' value='solid' />
+            <format attr='border-color' id='annotation_0' value='#af4345' />
+            <format attr='border-width' id='annotation_0' value='2' />
+            <format attr='fill-color' id='annotation_1' value='#f7faf06d' />
+            <format attr='border-style' id='annotation_1' value='solid' />
+            <format attr='border-width' id='annotation_1' value='2' />
+            <format attr='border-color' id='annotation_1' value='#59a14f' />
+            <format attr='fill-color' id='annotation_0' value='#faf5f45b' />
+          </style-rule>
+          <style-rule element='map-layer'>
+            <format attr='enabled' id='hillshade_highlight_bright' value='true' />
+            <format attr='enabled' id='hillshade_highlight_med' value='true' />
+            <format attr='enabled' id='hillshade_shadow_faint' value='true' />
+            <format attr='enabled' id='hillshade_shadow_med' value='true' />
+            <format attr='enabled' id='hillshade_shadow_dark' value='true' />
+            <format attr='enabled' id='hillshade_shadow_extreme' value='true' />
+            <format attr='enabled' id='place-village' value='true' />
+            <format attr='enabled' id='place-town' value='true' />
+            <format attr='enabled' id='place-islands' value='true' />
+            <format attr='enabled' id='place-city-sm' value='true' />
+            <format attr='enabled' id='place-city-md-s' value='true' />
+            <format attr='enabled' id='place-city-md-n' value='true' />
+            <format attr='enabled' id='place-city-lg-s' value='true' />
+            <format attr='enabled' id='place-city-lg-n' value='true' />
+            <format attr='enabled' id='place-capital-s' value='true' />
+            <format attr='enabled' id='place-capital-n' value='true' />
+            <format attr='enabled' id='b01002_001e' value='false' />
+            <format attr='enabled' id='b01002_002e' value='false' />
+            <format attr='enabled' id='b01002_003e' value='false' />
+            <format attr='enabled' id='dp02_0001e' value='false' />
+            <format attr='enabled' id='dp02_0015e' value='false' />
+            <format attr='enabled' id='dp03_0027e_plus_dp03_0029e' value='false' />
+            <format attr='enabled' id='dp03_0028e' value='false' />
+            <format attr='enabled' id='dp03_0030e_plus_dp03_0031e' value='false' />
+            <format attr='enabled' id='dp03_0062e' value='false' />
+            <format attr='enabled' id='dp03_0088e' value='false' />
+            <format attr='enabled' id='dp04_0001e' value='false' />
+            <format attr='enabled' id='dp04_0046e' value='false' />
+            <format attr='enabled' id='dp04_0047e' value='false' />
+            <format attr='enabled' id='dp04_0089e' value='false' />
+            <format attr='enabled' id='dp05_0001e' value='true' />
+            <format attr='enabled' id='dp05_0002e_div_dp05_0003e' value='false' />
+            <format attr='enabled' id='dp05_0032e' value='false' />
+            <format attr='enabled' id='dp05_0033e' value='false' />
+            <format attr='enabled' id='dp05_0034e' value='false' />
+            <format attr='enabled' id='dp05_0039e' value='false' />
+            <format attr='enabled' id='dp05_0047e' value='false' />
+            <format attr='enabled' id='dp05_0053e' value='false' />
+            <format attr='enabled' id='dp05_0066e' value='false' />
+            <format attr='enabled' id='dp05_0077e' value='false' />
+          </style-rule>
+          <style-rule element='map'>
+            <format attr='washout' value='0' />
+            <format attr='map-style' value='light' />
+            <format attr='wrap' value='false' />
+          </style-rule>
+          <style-rule element='map-data-layer'>
+            <format attr='palette' value='tableau-map-grey-light' />
+            <format attr='geo-area-type' value='Tract' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane id='36' selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='on' />
+            </view>
+            <mark class='Multipolygon' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='size' value='0.84558010101318359' />
+                <format attr='shape' value=':filled/circle' />
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='false' />
+                <format attr='mark-color' value='#684e3f' />
+                <format attr='has-halo' value='false' />
+                <format attr='mark-transparency' value='255' />
+              </style-rule>
+            </style>
+          </pane>
+          <pane id='37' selection-relaxation-option='selection-relaxation-allow' x-axis-name='[federated.02p8d8a0natvcf1cx7h7r1fyppc2].[Longitude (generated)]'>
+            <view>
+              <breakdown value='on' />
+            </view>
+            <mark class='Multipolygon' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <encodings>
+              <lod column='[federated.02p8d8a0natvcf1cx7h7r1fyppc2].[avg:ln:qk]' />
+              <lod column='[federated.02p8d8a0natvcf1cx7h7r1fyppc2].[avg:lt:qk]' />
+              <color column='[federated.02p8d8a0natvcf1cx7h7r1fyppc2].[none:unit_description:nk]' />
+              <geometry column='[federated.02p8d8a0natvcf1cx7h7r1fyppc2].[Geometry (generated)]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='size' value='0.84558010101318359' />
+                <format attr='shape' value=':filled/circle' />
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='false' />
+                <format attr='mark-color' value='#684e3f' />
+                <format attr='has-halo' value='false' />
+                <format attr='mark-transparency' value='255' />
+              </style-rule>
+            </style>
+          </pane>
+          <pane id='38' selection-relaxation-option='selection-relaxation-allow' x-axis-name='[federated.02p8d8a0natvcf1cx7h7r1fyppc2].[Longitude (generated)]' x-index='1'>
+            <view>
+              <breakdown value='on' />
+            </view>
+            <mark class='Shape' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <encodings>
+              <lod column='[federated.02p8d8a0natvcf1cx7h7r1fyppc2].[avg:LATITUDE:qk]' />
+              <lod column='[federated.02p8d8a0natvcf1cx7h7r1fyppc2].[avg:LONGITUDE:qk]' />
+              <shape column='[federated.02p8d8a0natvcf1cx7h7r1fyppc2].[none:Join:ok]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='size' value='0.84558010101318359' />
+                <format attr='shape' value=':filled/asterisk' />
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='false' />
+                <format attr='mark-color' value='#684e3f' />
+                <format attr='has-halo' value='false' />
+                <format attr='mark-transparency' value='255' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.02p8d8a0natvcf1cx7h7r1fyppc2].[Latitude (generated)]</rows>
+        <cols>([federated.02p8d8a0natvcf1cx7h7r1fyppc2].[Longitude (generated)] + [federated.02p8d8a0natvcf1cx7h7r1fyppc2].[Longitude (generated)])</cols>
+        <annotations>
+          <annotation class='area' id='0' text-pinx='0' text-piny='0.5' text-width-delta='9'>
+            <formatted-text>
+              <run fontcolor='#e15759' fontsize='7'>High Population Density</run>
+            </formatted-text>
+            <top-left>
+              <visual-coordinate class='axis'>
+                <x-coord axis-value='-9756841.7864116151'>
+                  <node-reference>
+                    <axis>[federated.02p8d8a0natvcf1cx7h7r1fyppc2].[Longitude (generated)]</axis>
+                  </node-reference>
+                </x-coord>
+                <y-coord axis-value='5145537.792286329'>
+                  <node-reference>
+                    <axis>[federated.02p8d8a0natvcf1cx7h7r1fyppc2].[Latitude (generated)]</axis>
+                  </node-reference>
+                </y-coord>
+                <page-reference />
+                <projection name='EPSG:3857' u='-87.647201014695696' v='41.896831387645321' />
+              </visual-coordinate>
+            </top-left>
+            <bottom-right>
+              <visual-coordinate class='axis'>
+                <x-coord axis-value='-9752336.2538360432'>
+                  <node-reference>
+                    <axis>[federated.02p8d8a0natvcf1cx7h7r1fyppc2].[Longitude (generated)]</axis>
+                  </node-reference>
+                </x-coord>
+                <y-coord axis-value='5138176.6400750922'>
+                  <node-reference>
+                    <axis>[federated.02p8d8a0natvcf1cx7h7r1fyppc2].[Latitude (generated)]</axis>
+                  </node-reference>
+                </y-coord>
+                <page-reference />
+                <projection name='EPSG:3857' u='-87.606727126938353' v='41.847591369173912' />
+              </visual-coordinate>
+            </bottom-right>
+            <text x='8' y='0.409091' />
+          </annotation>
+          <annotation class='area' id='1' text-pinx='0.5' text-piny='0.5' text-width-delta='-18'>
+            <formatted-text>
+              <run fontcolor='#59a14f' fontsize='7'>Low Population Density</run>
+            </formatted-text>
+            <top-left>
+              <visual-coordinate class='axis'>
+                <x-coord axis-value='-9765671.6353711318'>
+                  <node-reference>
+                    <axis>[federated.02p8d8a0natvcf1cx7h7r1fyppc2].[Longitude (generated)]</axis>
+                  </node-reference>
+                </x-coord>
+                <y-coord axis-value='5144191.1509287041'>
+                  <node-reference>
+                    <axis>[federated.02p8d8a0natvcf1cx7h7r1fyppc2].[Latitude (generated)]</axis>
+                  </node-reference>
+                </y-coord>
+                <page-reference />
+                <projection name='EPSG:3857' u='-87.726520897463701' v='41.887826305957418' />
+              </visual-coordinate>
+            </top-left>
+            <bottom-right>
+              <visual-coordinate class='axis'>
+                <x-coord axis-value='-9759212.5528859198'>
+                  <node-reference>
+                    <axis>[federated.02p8d8a0natvcf1cx7h7r1fyppc2].[Longitude (generated)]</axis>
+                  </node-reference>
+                </x-coord>
+                <y-coord axis-value='5140584.3699832465'>
+                  <node-reference>
+                    <axis>[federated.02p8d8a0natvcf1cx7h7r1fyppc2].[Latitude (generated)]</axis>
+                  </node-reference>
+                </y-coord>
+                <page-reference />
+                <projection name='EPSG:3857' u='-87.668497972285152' v='41.863701264722089' />
+              </visual-coordinate>
+            </bottom-right>
+            <text x='0.5' y='0.5' />
+          </annotation>
+        </annotations>
+      </table>
+      <simple-id uuid='{C42E7279-8416-4264-9150-329D333D43C1}' />
+    </worksheet>
+    <worksheet name='Sheet 2'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true' fontalignment='1' fontcolor='#3f6287' fontname='Tableau Bold' fontsize='9'>Top 5 Locations with Highest Number of </run>
+            <run fontalignment='1'>Æ&#10;</run>
+            <run bold='true' fontalignment='1' fontcolor='#3f6287' fontname='Tableau Bold' fontsize='9'>Speed Violation </run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Input_Data' name='federated.02p8d8a0natvcf1cx7h7r1fyppc2' />
+          </datasources>
+          <datasource-dependencies datasource='federated.02p8d8a0natvcf1cx7h7r1fyppc2'>
+            <column-instance column='[ticket_number]' derivation='Count' name='[cnt:ticket_number:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[unit_description]' derivation='None' name='[none:unit_description:nk]' pivot='key' type='nominal' />
+            <column-instance column='[violation_location]' derivation='None' name='[none:violation_location:nk]' pivot='key' type='nominal' />
+            <column caption='Ticket Number' datatype='integer' name='[ticket_number]' role='dimension' type='ordinal' />
+            <column caption='Unit Description' datatype='string' name='[unit_description]' role='dimension' type='nominal' />
+            <column caption='Violation Location' datatype='string' name='[violation_location]' role='dimension' type='nominal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.02p8d8a0natvcf1cx7h7r1fyppc2].[none:unit_description:nk]'>
+            <groupfilter function='member' level='[none:unit_description:nk]' member='&quot;Speed&quot;' user:ui-domain='relevant' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.02p8d8a0natvcf1cx7h7r1fyppc2].[none:violation_location:nk]'>
+            <groupfilter count='6' end='top' function='end' units='records' user:ui-marker='end' user:ui-top-by-field='true'>
+              <groupfilter direction='DESC' expression='COUNT([ticket_number])' function='order' user:ui-marker='order'>
+                <groupfilter from='&quot;0 N ASHLAND AVE Chicago IL&quot;' function='range' level='[none:violation_location:nk]' to='&quot;9618 S EWING AVE Chicago IL&quot;' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+              </groupfilter>
+            </groupfilter>
+          </filter>
+          <shelf-sorts>
+            <shelf-sort-v2 dimension-to-sort='[federated.02p8d8a0natvcf1cx7h7r1fyppc2].[none:violation_location:nk]' direction='DESC' is-on-innermost-dimension='true' measure-to-sort-by='[federated.02p8d8a0natvcf1cx7h7r1fyppc2].[cnt:ticket_number:qk]' shelf='rows' />
+          </shelf-sorts>
+          <slices>
+            <column>[federated.02p8d8a0natvcf1cx7h7r1fyppc2].[none:unit_description:nk]</column>
+            <column>[federated.02p8d8a0natvcf1cx7h7r1fyppc2].[none:violation_location:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <encoding attr='space' class='0' field='[federated.02p8d8a0natvcf1cx7h7r1fyppc2].[cnt:ticket_number:qk]' field-type='quantitative' major-origin='0' major-spacing='5' scope='cols' type='space' />
+            <format attr='height' field='[federated.02p8d8a0natvcf1cx7h7r1fyppc2].[cnt:ticket_number:qk]' value='57' />
+          </style-rule>
+          <style-rule element='cell'>
+            <format attr='height' field='[federated.02p8d8a0natvcf1cx7h7r1fyppc2].[none:violation_location:nk]' value='16' />
+          </style-rule>
+          <style-rule element='header'>
+            <format attr='width' field='[federated.02p8d8a0natvcf1cx7h7r1fyppc2].[none:violation_location:nk]' value='96' />
+          </style-rule>
+          <style-rule element='field-labels'>
+            <format attr='color' value='#3f6287' />
+            <format attr='font-size' value='7' />
+          </style-rule>
+          <style-rule element='field-labels-decoration'>
+            <format attr='wrap' value='off' />
+            <format attr='vertical-align' value='top' />
+            <format attr='text-align' value='left' />
+          </style-rule>
+          <style-rule element='label'>
+            <format attr='text-align' field='[federated.02p8d8a0natvcf1cx7h7r1fyppc2].[none:violation_location:nk]' value='left' />
+            <format attr='font-size' field='[federated.02p8d8a0natvcf1cx7h7r1fyppc2].[cnt:ticket_number:qk]' value='7' />
+            <format attr='font-size' field='[federated.02p8d8a0natvcf1cx7h7r1fyppc2].[none:violation_location:nk]' value='6' />
+            <format attr='color' field='[federated.02p8d8a0natvcf1cx7h7r1fyppc2].[cnt:ticket_number:qk]' value='#4e79a7' />
+            <format attr='color' field='[federated.02p8d8a0natvcf1cx7h7r1fyppc2].[none:violation_location:nk]' value='#3f6287' />
+            <format attr='font-weight' field='[federated.02p8d8a0natvcf1cx7h7r1fyppc2].[none:violation_location:nk]' value='bold' />
+          </style-rule>
+          <style-rule element='table'>
+            <format attr='background-color' value='#faf5f0' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Bar' />
+            <encodings>
+              <color column='[federated.02p8d8a0natvcf1cx7h7r1fyppc2].[none:unit_description:nk]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[federated.02p8d8a0natvcf1cx7h7r1fyppc2].[none:violation_location:nk]</rows>
+        <cols>[federated.02p8d8a0natvcf1cx7h7r1fyppc2].[cnt:ticket_number:qk]</cols>
+      </table>
+      <simple-id uuid='{FB093A6D-3A3D-4B82-A8E1-451C4777FC71}' />
+    </worksheet>
+    <worksheet name='Sheet 2 (2)'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true' fontalignment='1' fontcolor='#af4345' fontname='Tableau Bold' fontsize='9'>Top 5 Locations with Highest Number of </run>
+            <run fontalignment='1'>Æ&#10;</run>
+            <run bold='true' fontalignment='1' fontcolor='#af4345' fontname='Tableau Bold' fontsize='9'>Red Light Violation </run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Input_Data' name='federated.02p8d8a0natvcf1cx7h7r1fyppc2' />
+          </datasources>
+          <datasource-dependencies datasource='federated.02p8d8a0natvcf1cx7h7r1fyppc2'>
+            <column-instance column='[ticket_number]' derivation='Count' name='[cnt:ticket_number:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[unit_description]' derivation='None' name='[none:unit_description:nk]' pivot='key' type='nominal' />
+            <column-instance column='[violation_location]' derivation='None' name='[none:violation_location:nk]' pivot='key' type='nominal' />
+            <column caption='Ticket Number' datatype='integer' name='[ticket_number]' role='dimension' type='ordinal' />
+            <column caption='Unit Description' datatype='string' name='[unit_description]' role='dimension' type='nominal' />
+            <column caption='Violation Location' datatype='string' name='[violation_location]' role='dimension' type='nominal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.02p8d8a0natvcf1cx7h7r1fyppc2].[none:unit_description:nk]'>
+            <groupfilter count='5' end='top' function='end' units='records' user:ui-marker='end' user:ui-top-by-field='true'>
+              <groupfilter direction='DESC' expression='COUNT([ticket_number])' function='order' user:ui-marker='order'>
+                <groupfilter function='member' level='[none:unit_description:nk]' member='&quot;Red Light&quot;' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-manual-selection='true' user:ui-manual-selection-all-when-empty='true' user:ui-marker='enumerate' />
+              </groupfilter>
+            </groupfilter>
+          </filter>
+          <filter class='categorical' column='[federated.02p8d8a0natvcf1cx7h7r1fyppc2].[none:violation_location:nk]'>
+            <groupfilter count='5' end='top' function='end' units='records' user:ui-marker='end' user:ui-top-by-field='true'>
+              <groupfilter direction='DESC' expression='COUNT([ticket_number])' function='order' user:ui-marker='order'>
+                <groupfilter function='union' user:ui-domain='relevant' user:ui-enumeration='inclusive' user:ui-marker='enumerate'>
+                  <groupfilter from='&quot;0 N ASHLAND AVE&quot;' function='range' level='[none:violation_location:nk]' to='&quot;1000 W HOLLYWOOD AVE&quot;' />
+                  <groupfilter function='member' level='[none:violation_location:nk]' member='&quot;11100 S HALSTED ST&quot;' />
+                  <groupfilter from='&quot;11900 S HALSTED&quot;' function='range' level='[none:violation_location:nk]' to='&quot;1200 W FOSTER AVE&quot;' />
+                  <groupfilter function='member' level='[none:violation_location:nk]' member='&quot;1300 W IRVING PARK ROAD&quot;' />
+                  <groupfilter function='member' level='[none:violation_location:nk]' member='&quot;140 W KINZIE&quot;' />
+                  <groupfilter function='member' level='[none:violation_location:nk]' member='&quot;150 N SACRAMENTO BOUL&quot;' />
+                  <groupfilter from='&quot;1600 N HALSTED STREET&quot;' function='range' level='[none:violation_location:nk]' to='&quot;1600 W CORTLAND ST&quot;' />
+                  <groupfilter function='member' level='[none:violation_location:nk]' member='&quot;1900 N ASHLAND AVE&quot;' />
+                  <groupfilter from='&quot;200 W GARFIELD BLVD&quot;' function='range' level='[none:violation_location:nk]' to='&quot;2000 W DIVISION&quot;' />
+                  <groupfilter function='member' level='[none:violation_location:nk]' member='&quot;2200 S PULASKI&quot;' />
+                  <groupfilter function='member' level='[none:violation_location:nk]' member='&quot;2200 S WESTERN AVENUE&quot;' />
+                  <groupfilter from='&quot;2348 S KOSTNER AVENUE&quot;' function='range' level='[none:violation_location:nk]' to='&quot;2400 W VAN BUREN STREE&quot;' />
+                  <groupfilter function='member' level='[none:violation_location:nk]' member='&quot;2426 N DAMEN AVE&quot;' />
+                  <groupfilter function='member' level='[none:violation_location:nk]' member='&quot;2600 S KEDZIE AVENUE&quot;' />
+                  <groupfilter from='&quot;2800 N CALIFORNIA AVE&quot;' function='range' level='[none:violation_location:nk]' to='&quot;2800 W PETERSON AVENUE&quot;' />
+                  <groupfilter from='&quot;30 W 87TH STREET&quot;' function='range' level='[none:violation_location:nk]' to='&quot;3000 W CHICAGO AVENUE&quot;' />
+                  <groupfilter function='member' level='[none:violation_location:nk]' member='&quot;3100 S DR MARTIN L KING&quot;' />
+                  <groupfilter function='member' level='[none:violation_location:nk]' member='&quot;3100 S KEDZIE AVENUE&quot;' />
+                  <groupfilter from='&quot;3200 N HARLEM AVE&quot;' function='range' level='[none:violation_location:nk]' to='&quot;3200 N PULASKI RD&quot;' />
+                  <groupfilter from='&quot;3200 W 31ST STREET&quot;' function='range' level='[none:violation_location:nk]' to='&quot;3200 W ARMITAGE AVENUE&quot;' />
+                  <groupfilter function='member' level='[none:violation_location:nk]' member='&quot;3216 W ADDISON ST&quot;' />
+                  <groupfilter function='member' level='[none:violation_location:nk]' member='&quot;3400 W DIVERSEY AVENUE&quot;' />
+                  <groupfilter function='member' level='[none:violation_location:nk]' member='&quot;3400 W NORTH AVE&quot;' />
+                  <groupfilter function='member' level='[none:violation_location:nk]' member='&quot;3500 S WESTERN&quot;' />
+                  <groupfilter from='&quot;3600 N AUSTIN AVENUE&quot;' function='range' level='[none:violation_location:nk]' to='&quot;3600 N WESTERN AVENUE&quot;' />
+                  <groupfilter function='member' level='[none:violation_location:nk]' member='&quot;3700 W IRVING PARK ROA&quot;' />
+                  <groupfilter function='member' level='[none:violation_location:nk]' member='&quot;3800 W MADISON STREET&quot;' />
+                  <groupfilter from='&quot;400 E 31ST STREET&quot;' function='range' level='[none:violation_location:nk]' to='&quot;4000 W LAWRENCE AVENUE&quot;' />
+                  <groupfilter from='&quot;4200 S CICERO AVENUE&quot;' function='range' level='[none:violation_location:nk]' to='&quot;4400 W ROOSEVELT&quot;' />
+                  <groupfilter function='member' level='[none:violation_location:nk]' member='&quot;4440 W LAWRENCE AVENUE&quot;' />
+                  <groupfilter function='member' level='[none:violation_location:nk]' member='&quot;4700 S WESTERN AVENUE&quot;' />
+                  <groupfilter function='member' level='[none:violation_location:nk]' member='&quot;4700 W IRVING PARK ROA&quot;' />
+                  <groupfilter from='&quot;4800 N ASHLAND AVENUE&quot;' function='range' level='[none:violation_location:nk]' to='&quot;4800 W NORTH AVENUE&quot;' />
+                  <groupfilter from='&quot;500 N COLUMBUS DRIVE&quot;' function='range' level='[none:violation_location:nk]' to='&quot;5000 S ARCHER AVE&quot;' />
+                  <groupfilter function='member' level='[none:violation_location:nk]' member='&quot;5075 W MONTROSE AVENUE&quot;' />
+                  <groupfilter from='&quot;5200 N BROADWAY ST&quot;' function='range' level='[none:violation_location:nk]' to='&quot;5232 N MILWAUKEE AVE&quot;' />
+                  <groupfilter function='member' level='[none:violation_location:nk]' member='&quot;5400 S ARCHER AVE&quot;' />
+                  <groupfilter function='member' level='[none:violation_location:nk]' member='&quot;5500 S WENTWORTH AVEN&quot;' />
+                  <groupfilter function='member' level='[none:violation_location:nk]' member='&quot;5500 S WESTERN AVE&quot;' />
+                  <groupfilter from='&quot;5600 W ADDISON STREET&quot;' function='range' level='[none:violation_location:nk]' to='&quot;5616 W FOSTER AVE&quot;' />
+                  <groupfilter from='&quot;5930 N CLARK STREET&quot;' function='range' level='[none:violation_location:nk]' to='&quot;6000 W IRVING PARK ROAD&quot;' />
+                  <groupfilter from='&quot;6300 S DAMEN AVENUE&quot;' function='range' level='[none:violation_location:nk]' to='&quot;6300 S WESTERN AVE&quot;' />
+                  <groupfilter from='&quot;6400 N CALIFORNIA AVE&quot;' function='range' level='[none:violation_location:nk]' to='&quot;6400 W IRVING PK&quot;' />
+                  <groupfilter function='member' level='[none:violation_location:nk]' member='&quot;6700 S CORNELL DRIVE&quot;' />
+                  <groupfilter function='member' level='[none:violation_location:nk]' member='&quot;6700 S STONY ISLAND A&quot;' />
+                  <groupfilter from='&quot;7100 S ASHLAND&quot;' function='range' level='[none:violation_location:nk]' to='&quot;7200 W BELMONT AVE&quot;' />
+                  <groupfilter function='member' level='[none:violation_location:nk]' member='&quot;7432 W TOUHY AVENUE&quot;' />
+                  <groupfilter function='member' level='[none:violation_location:nk]' member='&quot;7600 S STONY ISLAND A&quot;' />
+                  <groupfilter from='&quot;7900 S HALSTED STREET&quot;' function='range' level='[none:violation_location:nk]' to='&quot;800 W ROOSEVELT ROAD&quot;' />
+                  <groupfilter from='&quot;848 W 87TH STREET&quot;' function='range' level='[none:violation_location:nk]' to='&quot;9500 S HALSTED STREET&quot;' />
+                  <groupfilter function='member' level='[none:violation_location:nk]' member='&quot;9900 S HALSTED ST&quot;' />
+                </groupfilter>
+              </groupfilter>
+            </groupfilter>
+          </filter>
+          <shelf-sorts>
+            <shelf-sort-v2 dimension-to-sort='[federated.02p8d8a0natvcf1cx7h7r1fyppc2].[none:violation_location:nk]' direction='DESC' is-on-innermost-dimension='true' measure-to-sort-by='[federated.02p8d8a0natvcf1cx7h7r1fyppc2].[cnt:ticket_number:qk]' shelf='rows' />
+          </shelf-sorts>
+          <slices>
+            <column>[federated.02p8d8a0natvcf1cx7h7r1fyppc2].[none:unit_description:nk]</column>
+            <column>[federated.02p8d8a0natvcf1cx7h7r1fyppc2].[none:violation_location:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <encoding attr='space' class='0' field='[federated.02p8d8a0natvcf1cx7h7r1fyppc2].[cnt:ticket_number:qk]' field-type='quantitative' major-origin='0' major-spacing='5' scope='cols' type='space' />
+          </style-rule>
+          <style-rule element='cell'>
+            <format attr='height' field='[federated.02p8d8a0natvcf1cx7h7r1fyppc2].[none:violation_location:nk]' value='18' />
+          </style-rule>
+          <style-rule element='header'>
+            <format attr='width' field='[federated.02p8d8a0natvcf1cx7h7r1fyppc2].[none:violation_location:nk]' value='96' />
+            <format attr='height-header' value='19' />
+          </style-rule>
+          <style-rule element='field-labels'>
+            <format attr='color' value='#af4345' />
+            <format attr='font-size' value='7' />
+          </style-rule>
+          <style-rule element='field-labels-decoration'>
+            <format attr='wrap' value='off' />
+            <format attr='vertical-align' value='top' />
+            <format attr='text-align' value='left' />
+          </style-rule>
+          <style-rule element='label'>
+            <format attr='text-align' field='[federated.02p8d8a0natvcf1cx7h7r1fyppc2].[none:violation_location:nk]' value='left' />
+            <format attr='font-size' field='[federated.02p8d8a0natvcf1cx7h7r1fyppc2].[cnt:ticket_number:qk]' value='7' />
+            <format attr='font-size' field='[federated.02p8d8a0natvcf1cx7h7r1fyppc2].[none:violation_location:nk]' value='6' />
+            <format attr='font-weight' field='[federated.02p8d8a0natvcf1cx7h7r1fyppc2].[none:violation_location:nk]' value='bold' />
+            <format attr='color' field='[federated.02p8d8a0natvcf1cx7h7r1fyppc2].[none:violation_location:nk]' value='#af4345' />
+            <format attr='color' field='[federated.02p8d8a0natvcf1cx7h7r1fyppc2].[cnt:ticket_number:qk]' value='#af4345' />
+            <format attr='text-orientation' field='[federated.02p8d8a0natvcf1cx7h7r1fyppc2].[cnt:ticket_number:qk]' value='0' />
+          </style-rule>
+          <style-rule element='table'>
+            <format attr='background-color' value='#faf5f0' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Bar' />
+            <customized-tooltip>
+              <formatted-text>
+                <run fontcolor='#787878'>Violation Location:&#9;</run>
+                <run bold='true'>&lt;[federated.02p8d8a0natvcf1cx7h7r1fyppc2].[none:violation_location:nk]&gt;</run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#787878'>Count of Ticket Number:&#9;</run>
+                <run bold='true'>&lt;[federated.02p8d8a0natvcf1cx7h7r1fyppc2].[cnt:ticket_number:qk]&gt;</run>
+                <run>Æ&#10;</run>
+                <run bold='true'>Type:  &lt;[federated.02p8d8a0natvcf1cx7h7r1fyppc2].[none:unit_description:nk]&gt;</run>
+              </formatted-text>
+            </customized-tooltip>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-color' value='#e15759' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.02p8d8a0natvcf1cx7h7r1fyppc2].[none:violation_location:nk]</rows>
+        <cols>[federated.02p8d8a0natvcf1cx7h7r1fyppc2].[cnt:ticket_number:qk]</cols>
+      </table>
+      <simple-id uuid='{5B0301E7-6954-4A72-A017-3D10E3CB5AAA}' />
+    </worksheet>
+  </worksheets>
+  <dashboards>
+    <dashboard name='Dashboard 1'>
+      <style>
+        <style-rule element='table'>
+          <format attr='background-color' value='#faf5f0' />
+        </style-rule>
+        <style-rule element='dash-text'>
+          <format attr='text-align' id='dash-text_12' value='center' />
+          <format attr='vertical-align' id='dash-text_12' value='center' />
+          <format attr='wrap' id='dash-text_12' value='on' />
+        </style-rule>
+      </style>
+      <size maxheight='800' maxwidth='1000' minheight='800' minwidth='1000' />
+      <zones>
+        <zone h='100000' id='4' type='layout-basic' w='100000' x='0' y='0'>
+          <zone h='98000' id='31' param='horz' type='layout-flow' w='98400' x='800' y='1000'>
+            <zone h='98000' id='25' param='horz' type='layout-flow' w='98400' x='800' y='1000'>
+              <zone h='98000' id='21' param='horz' type='layout-flow' w='98400' x='800' y='1000'>
+                <zone h='98000' id='11' param='horz' type='layout-flow' w='98400' x='800' y='1000'>
+                  <zone h='98000' id='7' param='horz' type='layout-flow' w='98400' x='800' y='1000'>
+                    <zone h='98000' id='5' type='layout-basic' w='98400' x='800' y='1000'>
+                      <zone h='86000' id='3' name='Sheet 1' show-title='false' w='61697' x='800' y='13000'>
+                        <zone-style>
+                          <format attr='border-color' value='#000000' />
+                          <format attr='border-style' value='none' />
+                          <format attr='border-width' value='0' />
+                          <format attr='margin' value='4' />
+                        </zone-style>
+                      </zone>
+                      <zone forceUpdate='true' h='12000' id='12' type='text' w='98400' x='800' y='1000'>
+                        <formatted-text>
+                          <run bold='true' fontcolor='#000000' fontname='Tableau Bold' fontsize='20'>With more people, there are more car crashes</run>
+                          <run>Æ&#10;</run>
+                          <run bold='true' fontcolor='#000000' fontname='Tableau Bold' fontsize='20'> but that is not the case for Traffic Violation in the City of Chicago.</run>
+                        </formatted-text>
+                        <zone-style>
+                          <format attr='border-color' value='#000000' />
+                          <format attr='border-style' value='none' />
+                          <format attr='border-width' value='0' />
+                          <format attr='margin' value='4' />
+                        </zone-style>
+                      </zone>
+                      <zone h='86000' id='16' param='vert' type='layout-flow' w='36703' x='62497' y='13000'>
+                        <zone h='26625' id='29' name='Sheet 1 (3)' w='36703' x='62497' y='13000'>
+                          <layout-cache minheight='17' type-h='scalable' type-w='fixed' />
+                          <zone-style>
+                            <format attr='border-color' value='#000000' />
+                            <format attr='border-style' value='none' />
+                            <format attr='border-width' value='0' />
+                            <format attr='margin' value='4' />
+                          </zone-style>
+                        </zone>
+                        <zone fixed-size='208' h='27000' id='9' is-fixed='true' name='Sheet 2' w='36703' x='62497' y='39625'>
+                          <layout-cache minwidth='196' type-h='fixed' type-w='scalable' />
+                          <zone-style>
+                            <format attr='border-color' value='#000000' />
+                            <format attr='border-style' value='none' />
+                            <format attr='border-width' value='0' />
+                            <format attr='margin' value='4' />
+                          </zone-style>
+                        </zone>
+                        <zone fixed-size='219' h='28375' id='19' is-fixed='true' name='Sheet 2 (2)' w='36703' x='62497' y='66625'>
+                          <layout-cache type-h='fixed' type-w='fixed' />
+                          <zone-style>
+                            <format attr='border-color' value='#000000' />
+                            <format attr='border-style' value='none' />
+                            <format attr='border-width' value='0' />
+                            <format attr='margin' value='4' />
+                          </zone-style>
+                        </zone>
+                        <zone fixed-size='24' forceUpdate='true' h='4000' id='22' is-fixed='true' type='text' w='36703' x='62497' y='95000'>
+                          <formatted-text>
+                            <run fontalignment='2' fontname='Lucida Handwriting' fontsize='6'>Lalita Sharkey</run>
+                          </formatted-text>
+                          <zone-style>
+                            <format attr='border-color' value='#000000' />
+                            <format attr='border-style' value='none' />
+                            <format attr='border-width' value='0' />
+                            <format attr='margin' value='4' />
+                          </zone-style>
+                        </zone>
+                      </zone>
+                    </zone>
+                  </zone>
+                </zone>
+              </zone>
+            </zone>
+          </zone>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='8' />
+          </zone-style>
+        </zone>
+        <zone h='17375' id='8' name='Sheet 1' pane-specification-id='37' type='map' w='14200' x='45300' y='30625' />
+        <zone h='7750' id='32' name='Sheet 1 (3)' pane-specification-id='37' param='[federated.02p8d8a0natvcf1cx7h7r1fyppc2].[none:unit_description:nk]' type='color' w='14400' x='45300' y='15625' />
+        <zone h='6125' id='33' name='Sheet 1 (3)' pane-specification-id='38' param='[federated.02p8d8a0natvcf1cx7h7r1fyppc2].[none:Join:ok]' type='shape' w='14200' x='45400' y='24000' />
+      </zones>
+      <devicelayouts>
+        <devicelayout auto-generated='true' name='Phone'>
+          <size maxheight='1300' minheight='1300' sizing-mode='vscroll' />
+          <zones>
+            <zone h='100000' id='35' type='layout-basic' w='100000' x='0' y='0'>
+              <zone h='98000' id='34' param='vert' type='layout-flow' w='98400' x='800' y='1000'>
+                <zone forceUpdate='true' h='12000' id='12' type='text' w='98400' x='800' y='1000'>
+                  <formatted-text>
+                    <run bold='true' fontcolor='#000000' fontname='Tableau Bold' fontsize='20'>With more people, there are more car crashes</run>
+                    <run>Æ&#10;</run>
+                    <run bold='true' fontcolor='#000000' fontname='Tableau Bold' fontsize='20'> but that is not the case for Traffic Violation in the City of Chicago.</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='86000' id='3' is-fixed='true' name='Sheet 1' show-title='false' w='61697' x='800' y='13000'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='17375' id='8' name='Sheet 1' pane-specification-id='37' type='map' w='14200' x='45300' y='30625'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='205' h='26625' id='29' is-fixed='true' name='Sheet 1 (3)' w='36703' x='62497' y='13000'>
+                  <layout-cache minheight='17' type-h='scalable' type-w='fixed' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='7750' id='32' name='Sheet 1 (3)' pane-specification-id='37' param='[federated.02p8d8a0natvcf1cx7h7r1fyppc2].[none:unit_description:nk]' type='color' w='14400' x='45300' y='15625'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='6125' id='33' name='Sheet 1 (3)' pane-specification-id='38' param='[federated.02p8d8a0natvcf1cx7h7r1fyppc2].[none:Join:ok]' type='shape' w='14200' x='45400' y='24000'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='208' h='27000' id='9' is-fixed='true' name='Sheet 2' w='36703' x='62497' y='39625'>
+                  <layout-cache minwidth='196' type-h='fixed' type-w='scalable' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='219' h='28375' id='19' is-fixed='true' name='Sheet 2 (2)' w='36703' x='62497' y='66625'>
+                  <layout-cache type-h='fixed' type-w='fixed' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='24' forceUpdate='true' h='4000' id='22' type='text' w='36703' x='62497' y='95000'>
+                  <formatted-text>
+                    <run fontalignment='2' fontname='Lucida Handwriting' fontsize='6'>Lalita Sharkey</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+              </zone>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='8' />
+              </zone-style>
+            </zone>
+          </zones>
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{94BE69DB-7171-4F1B-AAA6-6DF68DF74AC8}' />
+    </dashboard>
+  </dashboards>
+  <windows source-height='30'>
+    <window class='worksheet' name='Sheet 1'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='37' type='map' />
+            <card pane-specification-id='37' param='[federated.02p8d8a0natvcf1cx7h7r1fyppc2].[none:unit_description:nk]' type='color' />
+            <card pane-specification-id='38' param='[federated.02p8d8a0natvcf1cx7h7r1fyppc2].[none:Join:ok]' type='shape' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <map-scale-visibility value='0' />
+        <default-map-tool-selection tool='2' />
+        <default-map-unit-selection mapunit='2' />
+      </viewpoint>
+      <simple-id uuid='{5AE83A25-DA71-4A27-BB31-21D84FFBA4B2}' />
+    </window>
+    <window class='worksheet' name='Sheet 1 (3)'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='37' type='map' />
+            <card pane-specification-id='37' param='[federated.02p8d8a0natvcf1cx7h7r1fyppc2].[none:unit_description:nk]' type='color' />
+            <card pane-specification-id='38' param='[federated.02p8d8a0natvcf1cx7h7r1fyppc2].[none:Join:ok]' type='shape' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <map-scale-visibility value='0' />
+        <default-map-tool-selection tool='1' />
+        <default-map-unit-selection mapunit='2' />
+      </viewpoint>
+      <simple-id uuid='{E06101AF-E39B-492F-9709-BD3CE419B048}' />
+    </window>
+    <window class='worksheet' name='Sheet 2'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card param='[federated.02p8d8a0natvcf1cx7h7r1fyppc2].[none:violation_location:nk]' type='filter' />
+            <card param='[federated.02p8d8a0natvcf1cx7h7r1fyppc2].[none:unit_description:nk]' type='filter' />
+            <card param='[federated.02p8d8a0natvcf1cx7h7r1fyppc2].[none:violation_location:nk]' type='highlighter' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{75C59170-2518-43D7-964E-BB9525BCC587}' />
+    </window>
+    <window class='worksheet' maximized='true' name='Sheet 2 (2)'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card mode='typeinlist' param='[federated.02p8d8a0natvcf1cx7h7r1fyppc2].[none:unit_description:nk]' type='filter' />
+            <card param='[federated.02p8d8a0natvcf1cx7h7r1fyppc2].[none:violation_location:nk]' type='highlighter' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{DBC8AA1C-1CC9-4B99-AA34-C645CF158480}' />
+    </window>
+    <window class='dashboard' name='Dashboard 1'>
+      <viewpoints>
+        <viewpoint name='Sheet 1'>
+          <zoom type='entire-view' />
+          <map-scale-visibility value='0' />
+          <default-map-tool-selection tool='2' />
+          <default-map-unit-selection mapunit='2' />
+        </viewpoint>
+        <viewpoint name='Sheet 1 (3)'>
+          <zoom type='entire-view' />
+          <map-scale-visibility value='0' />
+          <default-map-unit-selection mapunit='2' />
+        </viewpoint>
+        <viewpoint name='Sheet 2' />
+        <viewpoint name='Sheet 2 (2)' />
+      </viewpoints>
+      <active id='-1' />
+      <simple-id uuid='{7A0D16C1-3464-4184-AD33-CACB36BA3267}' />
+    </window>
+  </windows>
+</workbook>
